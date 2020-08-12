@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BoxModel</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /*border-width: 10px;*/
+            /*border-color: orange;*/
+            /*border-style: solid;*/
+            border: orange 10px solid;
+            padding: 10px;
+            margin: 100px;
+        }
+
+        .inner {
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+        }
+
+        .box2{
+            width: 240px;
+            height: 240px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="inner"></div>
+</div>
+<div class="box2"></div>
+</body>
+</html>
