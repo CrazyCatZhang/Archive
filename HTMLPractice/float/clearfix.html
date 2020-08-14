@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClearFix</title>
+    <style>
+        .box1 {
+            border: 10px red solid;
+            margin-bottom: 10px;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            float: left;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-top: 100px;
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="box1 clearfix">
+    <div class="box2"></div>
+</div>
+<div class="box3 clearfix">
+    <div class="box4"></div>
+</div>
+</body>
+</html>
