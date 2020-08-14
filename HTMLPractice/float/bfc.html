@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC</title>
+    <link rel="stylesheet" href="../exercise/css/reset.min.css">
+    <style>
+        .outer {
+            border: 10px red solid;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            float: left;
+            margin: 10px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            float: left;
+            margin-bottom: 10px;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+
+    </div>
+</div>
+<div class="box1">
+
+</div>
+<div class="box2">
+
+</div>
+<div class="box3">
+
+</div>
+</body>
+</html>
