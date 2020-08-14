@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Absolute</title>
+    <link rel="stylesheet" href="../exercise/css/reset.min.css">
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: #b92f2e;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">1</div>
+<div class="box2">
+    2
+    <div class="inner">
+        5
+    </div>
+</div>
+<div class="box3">3</div>
+</body>
+</html>
