@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IconFont</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <style>
+        li{
+            list-style: none;
+        }
+
+        li::before{
+            content: '\f1b0';
+            font-family: 'Font Awesome 5 Free',serif;
+            font-weight: 900;
+            color: blue;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<i class="fas fa-dog" style="font-size: 80px;color: aqua"></i>
+<i class="fas fa-frog" style="font-size: 80px;color: green"></i>
+<ul>
+    <li>TestA</li>
+    <li>TestB</li>
+    <li>TestC</li>
+    <li>TestD</li>
+</ul>
+</body>
+</html>
