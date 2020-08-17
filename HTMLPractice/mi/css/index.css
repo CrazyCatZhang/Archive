@@ -1,0 +1,48 @@
+.top-bar-wrapper {
+    width: 100%;
+    line-height: 40px;
+    background-color: #333333;
+}
+
+.service {
+    float: left;
+}
+
+.service li {
+    float: left;
+}
+
+.service li a:hover,.user-info li a:hover{
+    color: #ffffff;
+}
+
+.service .liner,.user-info .liner{
+    color: #424242;
+    margin: 0 8px;
+}
+
+.shop-cart{
+    width: 120px;
+    color: #b0b0b0;
+    background-color: #424242;
+    text-align: center;
+    float: right;
+}
+
+.shop-cart .fas{
+    margin-right: 3px;
+}
+
+.shop-cart:hover a{
+    color: #ee702e;
+    background-color: white;
+}
+
+.user-info {
+    float: right;
+    margin-right: 25px;
+}
+
+.user-info li {
+    float: left;
+}
