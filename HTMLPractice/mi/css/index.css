@@ -1,48 +1,161 @@
 .top-bar-wrapper {
     width: 100%;
+    height: 40px;
     line-height: 40px;
-    background-color: #333333;
+    background-color: #333;
 }
 
-.service {
-    float: left;
+.top-bar a {
+    display: block;
+    font-size: 12px;
+    color: #b0b0b0;
+    text-decoration: none;
 }
 
-.service li {
-    float: left;
+.top-bar a:hover {
+    color: white;
 }
 
-.service li a:hover,.user-info li a:hover{
-    color: #ffffff;
-}
-
-.service .liner,.user-info .liner{
+.top-bar .liner {
+    font-size: 12px;
     color: #424242;
     margin: 0 8px;
 }
 
-.shop-cart{
+.service, .top-bar li {
+    float: left;
+}
+
+.app {
+    position: relative;
+}
+
+.app:hover .qrcode {
+    height: 148px;
+}
+
+.app-wrapper:hover .app::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.app .qrcode {
+    width: 124px;
+    height: 0;
+    overflow: hidden;
+    line-height: 1;
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    left: -40px;
+    transition: height 0.3s;
+}
+
+.app .qrcode img {
+    width: 90px;
+    margin: 17px 17px 10px;
+}
+
+.app .qrcode span {
+    font-size: 14px;
+    color: #000000;
+}
+
+.shop-cart, .user-info {
+    float: right;
+}
+
+.shop-cart {
+    margin-left: 26px;
+    position: relative;
+}
+
+.shop-cart a {
     width: 120px;
-    color: #b0b0b0;
     background-color: #424242;
     text-align: center;
-    float: right;
+    position: relative;
+    z-index: 999999;
 }
 
-.shop-cart .fas{
-    margin-right: 3px;
+.shop-cart:hover a {
+    background-color: #fff;
+    color: #FF6700;
 }
 
-.shop-cart:hover a{
-    color: #ee702e;
+.shop-cart:hover .cart {
+    height: 100px;
+}
+
+.shop-cart i {
+    margin-right: 2px;
+}
+
+.shop-cart .cart {
+    width: 316px;
+    height: 0;
+    overflow: hidden;
     background-color: white;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    top: 40px;
+    left: -192px;
+    margin-left: -4px;
+    transition: height 0.3s;
 }
 
-.user-info {
-    float: right;
-    margin-right: 25px;
+.shop-cart .cart span {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    line-height: 100px;
 }
 
-.user-info li {
+.header {
+    height: 100px;
+}
+
+.header .logo {
     float: left;
+    margin: 22px 0;
+    width: 55px;
+    height: 55px;
+    position: relative;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.header .logo a {
+    width: 55px;
+    height: 55px;
+    background-color: #FF6700;
+    background-image: url("../img/mi-logo.png");
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: left 0.3s;
+}
+
+.header .logo .home {
+    background-image: url("../img/mi-home.png");
+    left: -55px;
+}
+
+.header .logo:hover .mi {
+    left: 55px;
+}
+
+.header .logo:hover .home {
+    left: 0;
 }
