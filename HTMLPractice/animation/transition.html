@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transition</title>
+	<style>
+		.box1 {
+			width: 800px;
+			height: 800px;
+			background-color: silver;
+		}
+
+		.box2 {
+			width: 100px;
+			height: 100px;
+			margin-left: 0;
+			background-color: aqua;
+			margin-bottom: 100px;
+			/*transition: all 2s;*/
+			transition-property: all;
+			transition-duration: 2s;
+			transition-timing-function: ease-in-out;
+		}
+
+		.box3 {
+			width: 100px;
+			height: 100px;
+			margin-left: 0;
+			background-color: orange;
+			transition: all 2s;
+		}
+
+		.box1:hover div {
+			margin-left: 700px;
+		}
+	</style>
+</head>
+<body>
+<div class="box1">
+	<div class="box2"></div>
+	<div class="box3"></div>
+</div>
+</body>
+</html>
