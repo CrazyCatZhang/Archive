@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transform</title>
+	<style>
+		html {
+			perspective: 800px;
+		}
+
+		body {
+			border: 1px aqua solid;
+		}
+
+		.box1 {
+			width: 320px;
+			height: 320px;
+			margin: 200px auto;
+			transition: 2s;
+		}
+
+		body:hover .box1 {
+			transform: rotateY(180deg);
+		}
+	</style>
+</head>
+<body>
+<div class="box1">
+	<img src="an.jpg" alt="">
+</div>
+</body>
+</html>
