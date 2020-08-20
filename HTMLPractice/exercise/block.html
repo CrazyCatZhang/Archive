@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Block</title>
+	<link rel="stylesheet" href="./css/reset.min.css">
+	<style>
+		.clock {
+			width: 500px;
+			height: 500px;
+			border-radius: 50%;
+			margin: 200px auto;
+			position: relative;
+			background-image: url("./img/bg3.jpg");
+			background-size: contain;
+		}
+
+		.clock > div {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			margin: auto;
+		}
+
+		.hour-wrapper {
+			width: 70%;
+			height: 70%;
+			animation: turn 43200s linear infinite;
+		}
+
+		.hour {
+			height: 50%;
+			width: 6px;
+			background-color: black;
+			margin: 0 auto;
+		}
+
+		.minute-wrapper {
+			width: 80%;
+			height: 80%;
+			animation: turn 3600s steps(60) infinite;
+		}
+
+		.minute {
+			height: 50%;
+			width: 4px;
+			background-color: black;
+			margin: 0 auto;
+		}
+
+		.seconds-wrapper {
+			width: 90%;
+			height: 90%;
+			animation: turn 60s steps(60) infinite;
+		}
+
+		.seconds {
+			height: 50%;
+			width: 2px;
+			background-color: aqua;
+			margin: 0 auto;
+		}
+
+		@keyframes turn {
+			from {
+				transform: rotateZ(0);
+			}
+			to {
+				transform: rotateZ(360deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+<div class="clock">
+	<div class="hour-wrapper">
+		<div class="hour"></div>
+	</div>
+	<div class="minute-wrapper">
+		<div class="minute"></div>
+	</div>
+	<div class="seconds-wrapper">
+		<div class="seconds"></div>
+	</div>
+</div>
+</body>
+</html>
