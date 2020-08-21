@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 5.33333333vw;
+  background-color: #eff0f4;
+}
+.w,
+.top-bar,
+.banner,
+.menu,
+.course-list {
+  width: 17.325rem;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+.top-bar {
+  height: 4.375rem;
+  line-height: 4.375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar a {
+  color: #24253d;
+  font-size: 1.25rem;
+}
+.top-bar a i {
+  color: #999999;
+  font-size: 1rem;
+}
+.banner img {
+  width: 100%;
+}
+.menu {
+  height: 8.225rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: space-evenly;
+}
+.menu a {
+  width: 8.175rem;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  border-radius: 0.25rem;
+  color: white;
+  font-size: 0.75rem;
+}
+.menu a i {
+  margin: 0 0.5rem 0 0.95rem;
+}
+.menu .course {
+  background-color: #f97053;
+}
+.menu .star {
+  background-color: #ca63fe;
+}
+.menu .sub {
+  background-color: #ff3971;
+}
+.menu .download {
+  background-color: #1d92ff;
+}
+.course-list {
+  height: 9.75rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-bottom: 1.175rem;
+}
+.course-list .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.course-list .title h2 {
+  font-size: 0.8rem;
+  color: #24253d;
+  border-left: 0.05rem solid #3a84ff;
+  padding-left: 0.475rem;
+}
+.course-list .title a {
+  font-size: 0.7rem;
+  color: #656565;
+}
+.item-list {
+  width: 18rem;
+  display: flex;
+  overflow: auto;
+}
+.item {
+  flex: none;
+  box-sizing: border-box;
+  width: 8.15rem;
+  height: 8.05rem;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  margin-right: 0.575rem;
+}
+.item img {
+  width: 100%;
+}
+.item h3 {
+  font-size: 0.8rem;
+  color: #24253d;
+}
+.item .user-info {
+  display: flex;
+  align-items: center;
+}
+.item .user-info .avatar {
+  width: 1rem;
+  height: 1rem;
+}
+.item .user-info .nickname {
+  font-size: 0.6rem;
+  color: #969393;
+  margin-left: 0.15rem;
+}
+/*# sourceMappingURL=style.css.map */
