@@ -1,0 +1,28 @@
+@my-selector: banner;
+.@{my-selector} {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}
+
+@images: ../img;
+body {
+  background-image: url("@{images}/1.png");
+}
+
+@property: cloor;
+.widget {
+    @{property}: #0ee;
+  background-@{property}: #999;
+}
+
+@primary: green;
+@secondary: blue;
+
+.section {
+  @color: primary;
+
+  .element {
+    color: @@color;
+  }
+}

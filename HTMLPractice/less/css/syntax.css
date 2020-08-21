@@ -1,0 +1,16 @@
+.banner {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}
+body {
+  background-image: url("../img/1.png");
+}
+.widget {
+  cloor: #0ee;
+  background-cloor: #999;
+}
+.section .element {
+  color: green;
+}
+/*# sourceMappingURL=syntax.css.map */
