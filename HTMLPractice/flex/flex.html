@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flex</title>
+	<style>
+		.box1 {
+			width: 800px;
+			border: 1px red solid;
+			display: flex;
+			flex-direction: row-reverse;
+		}
+
+		.box1 div {
+			width: 200px;
+			height: 200px;
+			background-color: aqua;
+			flex-grow: 1;
+		}
+
+		div:nth-child(2) {
+			background-color: orange;
+		}
+
+		div:nth-child(3) {
+			background-color: greenyellow;
+		}
+	</style>
+</head>
+<body>
+<div class="box1">
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+</div>
+</body>
+</html>
