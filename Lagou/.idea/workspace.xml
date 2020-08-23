@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d56c283b-3516-48a8-a3a1-8ac8b023f817" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Lagou.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/banner.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/con1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/con2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/direct.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/footer_lagou.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/icon_chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/lagou.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/sprite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/sprite2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/icon-arrow-right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/icon-baidu-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/icon-baidu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/icon-sina-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/icon-sina1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/icon-tencent-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/icon-tencent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/icon-wechat-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/icon-wechat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/open.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/qrcode-normal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img2/wx-login.svg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1gTny7HD8r31H685FFqWr25bfAN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/img" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d56c283b-3516-48a8-a3a1-8ac8b023f817" name="Default Changelist" comment="" />
+      <created>1598147701500</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598147701500</updated>
+      <workItem from="1598147702669" duration="283000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
