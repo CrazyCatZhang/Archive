@@ -20,39 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d56c283b-3516-48a8-a3a1-8ac8b023f817" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Lagou.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/banner.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/con1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/con2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/direct.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/footer_lagou.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/icon_chat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/lagou.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/sprite2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img/text.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/icon-arrow-right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/icon-baidu-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/icon-baidu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/icon-sina-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/icon-sina1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/icon-tencent-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/icon-tencent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/icon-wechat-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/icon-wechat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/open.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/qrcode-normal.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/img2/wx-login.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/icon_login@2x_a6d7b9d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/img/icon_phone@2x_73d8859.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="Less File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -67,17 +56,40 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/img" />
+    <property name="list.type.of.created.stylesheet" value="Less" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/img" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/img" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Lagou/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -89,7 +101,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598147701500</updated>
-      <workItem from="1598147702669" duration="283000" />
+      <workItem from="1598147702669" duration="18315000" />
+      <workItem from="1598182436156" duration="2204000" />
     </task>
     <servers />
   </component>
@@ -106,8 +119,83 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="547" y="339" key="EditFileWatcherDialog" timestamp="1598151159851">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="547" y="339" key="EditFileWatcherDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1598151159851" />
+    <state width="1748" height="391" key="GridCell.Tab.0.bottom" timestamp="1598184215828">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215828" />
+    <state width="1748" height="391" key="GridCell.Tab.0.center" timestamp="1598184215827">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215827" />
+    <state width="1748" height="391" key="GridCell.Tab.0.left" timestamp="1598184215826">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215826" />
+    <state width="1748" height="391" key="GridCell.Tab.0.right" timestamp="1598184215827">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215827" />
+    <state width="1748" height="391" key="GridCell.Tab.1.bottom" timestamp="1598184215830">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215830" />
+    <state width="1748" height="391" key="GridCell.Tab.1.center" timestamp="1598184215829">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215829" />
+    <state width="1748" height="391" key="GridCell.Tab.1.left" timestamp="1598184215828">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215828" />
+    <state width="1748" height="391" key="GridCell.Tab.1.right" timestamp="1598184215829">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215829" />
+    <state width="1748" height="391" key="GridCell.Tab.2.bottom" timestamp="1598184215832">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.2.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215832" />
+    <state width="1748" height="391" key="GridCell.Tab.2.center" timestamp="1598184215831">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.2.center/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215831" />
+    <state width="1748" height="391" key="GridCell.Tab.2.left" timestamp="1598184215830">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.2.left/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215830" />
+    <state width="1748" height="391" key="GridCell.Tab.2.right" timestamp="1598184215831">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.2.right/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215831" />
+    <state width="1748" height="391" key="GridCell.Tab.3.bottom" timestamp="1598184215833">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.3.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215833" />
+    <state width="1748" height="391" key="GridCell.Tab.3.center" timestamp="1598184215832">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.3.center/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215832" />
+    <state width="1748" height="391" key="GridCell.Tab.3.left" timestamp="1598184215832">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.3.left/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215832" />
+    <state width="1748" height="391" key="GridCell.Tab.3.right" timestamp="1598184215833">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1748" height="391" key="GridCell.Tab.3.right/0.0.1792.1120@0.0.1792.1120" timestamp="1598184215833" />
+    <state x="396" y="199" key="SettingsEditor" timestamp="1598151163609">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="396" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1598151163609" />
   </component>
 </project>
