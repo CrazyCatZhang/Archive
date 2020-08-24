@@ -1,7 +1,8 @@
 .w,
 .header .h_top .top-bar,
 .header .h_bottom .bottom-content,
-.search-wrapper .search {
+.search-wrapper .search,
+.banner-wrapper .banner {
   width: 1200px;
   margin: 0 auto;
 }
@@ -292,11 +293,78 @@ body {
   font-size: 14px;
   color: #00b38a;
 }
+.search-wrapper .search .hot-search li a:hover {
+  text-decoration: underline;
+}
 .search-wrapper .search .hot-search li:first-child {
   font-size: 14px;
   color: #777777;
 }
 .search-wrapper .search .hot-search li:last-child {
   margin-right: 647px;
+}
+.banner-wrapper {
+  height: 460px;
+}
+.banner-wrapper .banner {
+  height: 460px;
+}
+.banner-wrapper .banner .banner-left {
+  width: 300px;
+  height: 383px;
+  margin-top: 25px;
+}
+.banner-wrapper .banner .banner-left .banner-list {
+  height: 383px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.banner-wrapper .banner .banner-left .banner-list li .list-box {
+  height: 47px;
+  line-height: 47px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner-wrapper .banner .banner-left .banner-list li .list-box h2 {
+  font-size: 18px;
+  color: #333333;
+}
+.banner-wrapper .banner .banner-left .banner-list li .list-box a {
+  font-size: 14px;
+  color: #555;
+}
+.banner-wrapper .banner .banner-left .banner-list li .list-box a:hover {
+  text-decoration: underline;
+  color: #4fb08c;
+}
+.banner-wrapper .banner .banner-left .banner-list li .list-box i {
+  color: #828282;
+}
+.banner-wrapper .banner .banner-left .banner-list li {
+  position: relative;
+}
+.banner-wrapper .banner .banner-left .banner-list li .list-box {
+  position: relative;
+  z-index: 99999;
+}
+.banner-wrapper .banner .banner-left .banner-list li .list-box:hover {
+  width: 300px;
+  box-shadow: -4px 0 5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+.banner-wrapper .banner .banner-left .banner-list li .list-box:hover + .box {
+  display: block;
+}
+.banner-wrapper .banner .banner-left .banner-list li .box {
+  display: none;
+  width: 622px;
+  height: 265px;
+  position: absolute;
+  z-index: 9999;
+  left: 300px;
+  top: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=style.css.map */
