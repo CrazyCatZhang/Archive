@@ -6,7 +6,9 @@
 .main,
 .position-info,
 .form-btn,
-.company-info {
+.company-info,
+.footer .inner-wrapper .inner,
+.footer .copy-right .copy-right-content {
   width: 1200px;
   margin: 0 auto;
 }
@@ -478,6 +480,43 @@ body {
   display: block;
   color: #4fb08c;
 }
+.main .main-bottom {
+  margin-top: 54px;
+}
+.main .main-bottom .first-head a {
+  font-size: 16px;
+  color: #333333;
+  margin-right: 20px;
+}
+.main .main-bottom .first-head a:first-child {
+  margin-right: 20px;
+}
+.main .main-bottom .first-bottom {
+  position: relative;
+}
+.main .main-bottom .first-bottom a {
+  line-height: 15px;
+  box-sizing: content-box;
+  height: 15px;
+  padding-right: 18px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+  color: #555555;
+}
+.main .main-bottom .first-bottom a:hover {
+  color: #0dca9f;
+  text-decoration: underline;
+}
+.main .main-bottom .first-bottom a:last-child {
+  color: #999999;
+  position: absolute;
+  right: 0;
+  padding-right: 0;
+}
+.main .main-bottom .first-bottom a:last-child:hover {
+  text-decoration: none;
+}
 .position-info {
   height: 632px;
 }
@@ -612,5 +651,205 @@ body {
   width: 286px;
   height: 268px;
   border: 1px solid #EEE;
+}
+.company-info .cmp-info-list li .cmp-info-top {
+  width: 260px;
+  height: 167px;
+  margin: 0 13px;
+  padding-top: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed #E0E0E0;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.company-info .cmp-info-list li .cmp-info-top .images-top {
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url("../images/img/Cgq2xl4AbV-AJMLZAAAW2qWmOoc936.jpg");
+  background-size: 100% 100%;
+}
+.company-info .cmp-info-list li .cmp-info-top a:last-of-type {
+  font-size: 16px;
+  color: #333333;
+}
+.company-info .cmp-info-list li .cmp-info-top h4 {
+  font-size: 14px;
+}
+.company-info .cmp-info-list li .cmp-info-top h4:first-of-type {
+  color: #999999;
+}
+.company-info .cmp-info-list li .cmp-info-top h4:last-of-type {
+  width: 100%;
+  display: block;
+  color: #555555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.company-info .cmp-info-list li .cmp-info-bottom {
+  width: 286px;
+  height: 47px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+.company-info .cmp-info-list li .cmp-info-bottom a {
+  display: block;
+  width: 90px;
+  height: 30px;
+  margin-top: 17px;
+  position: relative;
+}
+.company-info .cmp-info-list li .cmp-info-bottom a:hover p:last-of-type {
+  color: #00b38a;
+}
+.company-info .cmp-info-list li .cmp-info-bottom a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px;
+  height: 30px;
+  width: 1px;
+  background: #EDEDED;
+}
+.company-info .cmp-info-list li .cmp-info-bottom a:last-of-type::after {
+  display: none;
+}
+.company-info .cmp-info-list li .cmp-info-bottom a:last-of-type {
+  width: 104px;
+}
+.company-info .cmp-info-list li .cmp-info-bottom a p:first-of-type {
+  color: #00b38a;
+  font-size: 14px;
+}
+.company-info .cmp-info-list li .cmp-info-bottom a p:last-of-type {
+  font-size: 12px;
+  color: #999999;
+  margin-top: 4px;
+}
+.company-info .cmp-info-list li:hover {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+.footer {
+  height: 354px;
+  margin-top: 91px;
+  border-top: 1px solid #ebebeb;
+}
+.footer .inner-wrapper {
+  height: 254px;
+}
+.footer .inner-wrapper .inner {
+  height: 138px;
+  margin-top: 49px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .inner-wrapper .inner .inner-left {
+  width: 182px;
+  height: 100%;
+  padding-right: 130px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-right: 1px solid #E8E8E8;
+}
+.footer .inner-wrapper .inner .inner-left .inner-form button {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #00B38A;
+  color: #00B38A;
+  background-color: white;
+  font-size: 14px;
+}
+.footer .inner-wrapper .inner .inner-left .inner-form button:hover {
+  color: white;
+  background-color: #4faf8c;
+}
+.footer .inner-wrapper .inner .inner-left .inner-form button:first-of-type {
+  margin-bottom: 16px;
+}
+.footer .inner-wrapper .inner .inner-left .inner-form .weixin {
+  position: relative;
+}
+.footer .inner-wrapper .inner .inner-left .inner-form .weixin img {
+  display: none;
+  width: 140px;
+  position: absolute;
+  background-color: white;
+  right: -150px;
+  bottom: -99px;
+  border-radius: 3px;
+}
+.footer .inner-wrapper .inner .inner-left .inner-form .weixin:hover img {
+  display: block;
+}
+.footer .inner-wrapper .inner .inner-left .inner-left-foot {
+  display: flex;
+  justify-content: space-between;
+}
+.footer .inner-wrapper .inner .inner-left .inner-left-foot a {
+  font-size: 14px;
+  color: #555555;
+}
+.footer .inner-wrapper .inner .inner-left .inner-left-foot a:hover {
+  color: #0dca9f;
+}
+.footer .inner-wrapper .inner .inner-right {
+  width: 757px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .inner-wrapper .inner .inner-right .inner-right-business {
+  width: 84px;
+  height: 138px;
+}
+.footer .inner-wrapper .inner .inner-right .inner-right-business p {
+  font-size: 18px;
+  color: #555555;
+  margin-bottom: 30px;
+}
+.footer .inner-wrapper .inner .inner-right .inner-right-business a {
+  display: block;
+  line-height: 22px;
+  color: #555555;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.footer .inner-wrapper .inner .inner-right .inner-right-business a:last-of-type {
+  margin-bottom: 0;
+}
+.footer .inner-wrapper .inner .inner-right .inner-right-business a:hover {
+  color: #0dca9f;
+}
+.footer .inner-wrapper .inner .inner-right .inner-right-business:last-child {
+  width: 267px;
+  height: 138px;
+}
+.footer .copy-right {
+  height: 100px;
+  background-color: #FAFAFA;
+}
+.footer .copy-right .copy-right-content {
+  height: 60px;
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .copy-right .copy-right-content .copy-right-main {
+  width: 720px;
+  height: 60px;
+}
+.footer .copy-right .copy-right-content .copy-right-icon {
+  width: 198px;
+  height: 19px;
 }
 /*# sourceMappingURL=style.css.map */
