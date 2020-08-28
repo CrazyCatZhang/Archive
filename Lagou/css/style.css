@@ -847,9 +847,60 @@ body {
 .footer .copy-right .copy-right-content .copy-right-main {
   width: 720px;
   height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #999999;
+}
+.footer .copy-right .copy-right-content .copy-right-main a {
+  display: flex;
+  align-items: center;
+}
+.footer .copy-right .copy-right-content .copy-right-main a:hover {
+  color: #555555;
+}
+.footer .copy-right .copy-right-content .copy-right-main a .foot-logo {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/img/sprite2.png");
+  background-repeat: no-repeat;
+  background-position: -10px -44px;
+  background-size: 128px 128px;
+}
+.footer .copy-right .copy-right-content .copy-right-main .footer-lagou-jubao {
+  width: 148px;
+  height: 42px;
+  padding: 8px 20px;
+  border: 1px solid #D5DADF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .copy-right .copy-right-content .copy-right-main .footer-lagou-jubao .lagou-jubao {
+  display: inline-block;
+  width: 20px;
+  height: 24px;
+  background-image: url("../images/img/sprite2.png");
+  background-repeat: no-repeat;
+  background-position: -10px -10px;
+  background-size: 128px 128px;
+}
+.footer .copy-right .copy-right-content .copy-right-main .footer-lagou-jubao p {
+  height: 42px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.footer .copy-right .copy-right-content .copy-right-main .footer-lagou-jubao p span {
+  font-size: 12px;
+  color: #999999;
 }
 .footer .copy-right .copy-right-content .copy-right-icon {
   width: 198px;
   height: 19px;
+  background-image: url("../images/img/footer_lagou_icon@2x_19e8994.png");
+  background-size: 100% 100%;
 }
 /*# sourceMappingURL=style.css.map */
