@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LightSpot</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html, body {
+			height: 100%;
+			overflow: hidden;
+			text-align: center;
+			background-color: black;
+		}
+
+		h1 {
+			display: inline-block;
+			margin-top: 50px;
+			font: bold 80px "微软雅黑";
+			color: rgba(255, 255, 255, .3);
+			background: linear-gradient(120deg, rgba(255, 255, 255, 0) 100px, rgba(255, 255, 255, 1) 180px, rgba(255, 255, 255, 0) 260px) no-repeat;
+			-webkit-background-clip: text;
+		}
+	</style>
+</head>
+<body>
+<h1>
+	CrazyCatZhang
+</h1>
+</body>
+<script>
+    const h1 = document.querySelector("h1");
+    let flag = -160;
+    setInterval(function () {
+        flag += 10;
+        if (flag === 600) {
+            flag = -160;
+        }
+        h1.style.backgroundPosition = flag + "px";
+    }, 50)
+</script>
+</html>
