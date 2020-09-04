@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transition</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			height: 100%;
+		}
+
+		body {
+			width: 60%;
+			height: 60%;
+			border: 1px solid;
+			margin: 100px auto 0;
+			position: relative;
+		}
+
+		.box1 {
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			top: 0;
+			right: 0;
+			margin: auto;
+			background-color: #bfa;
+			transition-property: width;
+			transition-duration: 2s;
+			transition-timing-function: linear;
+		}
+	</style>
+</head>
+<body>
+<!--<div class="box1"></div>-->
+</body>
+<script>
+    // window.onload = function() {
+    //     const box1 = document.querySelector(".box1");
+    // 	box1.style.width = "300px";
+    // 	alert(1);
+    // }
+    window.onload = function () {
+        const box1 = document.createElement("div");
+        box1.className = "box1";
+        document.documentElement.appendChild(box1);
+        setTimeout(function () {
+            box1.style.width = "300px";
+        }, 2000)
+    }
+</script>
+</html>
