@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SectorNavigation</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html, body {
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.wrapper {
+			width: 50px;
+			height: 50px;
+			position: fixed;
+			right: 15px;
+			bottom: 15px;
+		}
+
+		.wrapper .inner {
+			height: 100%;
+		}
+
+		.wrapper .inner img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			margin: 4px;
+			border-radius: 50%;
+		}
+
+		.wrapper .home {
+			position: absolute;
+			background: url("./img/home.png") no-repeat;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			border-radius: 50%;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="inner">
+		<img src="img/clos.png" alt=""/>
+		<img src="img/full.png" alt=""/>
+		<img src="img/open.png" alt=""/>
+		<img src="img/prev.png" alt=""/>
+		<img src="img/refresh.png" alt=""/>
+	</div>
+	<div class="home">
+
+	</div>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        const homeElement = document.querySelector(".wrapper .home");
+        const images = document.querySelectorAll(".wrapper .inner img");
+        let flag = true;
+        let c = 140;
+
+        homeElement.onclick = function () {
+            if (flag) {
+                this.style.transform = "rotate(-720deg)";
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.transition = "1s " + (i * 0.1) + "s";
+                    images[i].style.transform = "rotate(-720deg) scale(1)";
+                    images[i].style.left = -getPosition(c, 90 * i / (images.length - 1)).left + "px";
+                    images[i].style.top = -getPosition(c, 90 * i / (images.length - 1)).top + "px";
+                }
+            } else {
+                this.style.transform = "rotate(0deg)";
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.transition = "1s " + ((images.length - 1 - i) * 0.1) + "s";
+                    images[i].style.transform = "rotate(0deg) scale(1)"
+                    images[i].style.left = 0 + "px";
+                    images[i].style.top = 0 + "px";
+                }
+            }
+            flag = !flag;
+        }
+
+        function getPosition(c, deg) {
+            const x = Math.round(c * Math.sin(deg * Math.PI / 180));
+            const y = Math.round(c * Math.cos(deg * Math.PI / 180));
+            return {left: x, top: y};
+        }
+
+        for (let i = 0; i < images.length; i++) {
+            images[i].onclick = function () {
+                this.style.transition = "0.5s";
+                this.style.transform = "rotate(-720deg) scale(2)";
+                this.style.opacity = "0.1";
+                this.addEventListener("transitionend", function fn() {
+                    this.style.transition = "0.3s";
+                    this.style.transform = "rotate(-720deg) scale(1)";
+                    this.style.opacity = "1";
+                    this.removeEventListener("transitionend", fn);
+                });
+            }
+        }
+    }
+</script>
+</html>
