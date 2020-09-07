@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<title>Animation</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html, body {
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.wrapper {
+			height: 100%;
+			position: relative;
+			perspective: 200px;
+		}
+
+		.wrapper .inner {
+			height: 100%;
+			position: relative;
+			transform-style: preserve-3d;
+		}
+
+		.wrapper .inner img {
+			margin-top: -38px;
+			width: 30%;
+			animation: move 2s linear infinite;
+		}
+
+		@keyframes move {
+			from {
+				transform: translate3d(-50%, -50%, 0) rotateY(0deg);
+			}
+			to {
+				transform: translate3d(-50%, -50%, 0) rotateY(360deg);
+			}
+		}
+
+		.wrapper > .inner > img,
+		.wrapper > .inner > p {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate3d(-50%, -50%, 0) rotateY(0deg);
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="inner">
+		<img src="img/load/logo2.png" alt="">
+		<p>已加载0%</p>
+	</div>
+</div>
+</body>
+<script src="./js/data.js"></script>
+<script>
+    window.onload = function () {
+        const pElement = document.querySelector(".wrapper > .inner > p");
+        let flag = 0;
+        let arr = [];
+        for (const imgDataKey in imgData) {
+            arr = arr.concat(imgData[imgDataKey]);
+        }
+        for (let i = 0; i < arr.length; i++) {
+            let image = new Image();
+            image.src = arr[i];
+            image.onload = function () {
+                flag++;
+                pElement.innerHTML = "已加载" + (Math.round(flag / arr.length * 100)) + "%";
+            }
+            image.onerror = function () {
+                console.log("Error");
+            }
+        }
+    }
+</script>
+</html>
