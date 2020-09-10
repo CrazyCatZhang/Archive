@@ -1,0 +1,15 @@
+console.log(true + 1);
+console.log(true + false);
+console.log(2 + null);
+console.log(2 + NaN);
+console.log("123" + "456");
+console.log(true + "123");
+console.log(123 + "123");
+console.log(100 - 1);
+console.log(100 - true);
+console.log(100 - "1");
+console.log(2 * 2);
+console.log(2 * "2");
+console.log(2 * undefined);
+console.log(2 * null);
+console.log(2 * true);
