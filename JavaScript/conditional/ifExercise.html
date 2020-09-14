@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IfExercise</title>
+	<script>
+        let scores = prompt("请输入成绩：");
+        if (scores > 100 || scores < 0 || isNaN(Number(scores)) || scores === "") {
+            alert("Error");
+        } else {
+            if (Number(scores) === 100) {
+                alert("BMW");
+            } else if (scores >= 80) {
+                alert("iPhone");
+            } else {
+                alert("Book");
+            }
+        }
+	</script>
+</head>
+<body>
+
+</body>
+</html>
