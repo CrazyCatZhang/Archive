@@ -1,3 +1,4 @@
+console.time("test");
 for (let i = 2; i < 100; i++) {
     let flag = true;
     for (let j = 2; j < Math.sqrt(i); j++) {
@@ -10,3 +11,4 @@ for (let i = 2; i < 100; i++) {
         console.log(i);
     }
 }
+console.timeEnd("test");
