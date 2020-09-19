@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Switch</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#outer {
+			width: 500px;
+			margin: 50px auto;
+			padding: 10px;
+			background-color: #bfa;
+			text-align: center;
+		}
+	</style>
+
+	<script>
+        window.onload = function () {
+            const prev = document.getElementById("prev");
+            const next = document.getElementById("next");
+            const img = document.getElementsByTagName("img")[0];
+            const info = document.getElementById("info");
+            let imgArray = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg"];
+            let index = 0;
+            info.innerHTML = "一共 " + imgArray.length + " 张图片  现在是第 " + (index + 1) + " 张"
+            prev.onclick = function () {
+                index--;
+                if (index < 0) {
+                    index = imgArray.length - 1;
+                }
+                img.src = imgArray[index];
+                info.innerHTML = "一共 " + imgArray.length + " 张图片  现在是第 " + (index + 1) + " 张"
+            };
+
+            next.onclick = function () {
+                index++;
+                if (index > imgArray.length - 1) {
+                    index = 0;
+                }
+                img.src = imgArray[index];
+                info.innerHTML = "一共 " + imgArray.length + " 张图片  现在是第 " + (index + 1) + " 张"
+            };
+        };
+	</script>
+</head>
+<body>
+<div id="outer">
+	<p id="info"></p>
+	<img src="img/1.jpg" alt="冰棍">
+	<button id="prev">上一张</button>
+	<button id="next">下一张</button>
+</div>
+</body>
+</html>
