@@ -166,10 +166,10 @@
         });
 
         myClick("btn04", function () {
-			const city = document.getElementById("city");
-			const lis = city.getElementsByTagName("li");
+            const city = document.getElementById("city");
+            const lis = city.getElementsByTagName("li");
             for (let i = 0; i < lis.length; i++) {
-	            alert(lis[i].innerHTML);
+                alert(lis[i].innerHTML);
             }
         });
 
@@ -177,23 +177,42 @@
             const city = document.getElementById("city");
             const cns = city.children;
             for (let i = 0; i < cns.length; i++) {
-				alert(cns[i].innerHTML);
+                alert(cns[i].innerHTML);
             }
         });
 
         myClick("btn06", function () {
             const phone = document.getElementById("phone");
-            const first = phone.firstChild;
-            alert(first);
+            const first = phone.firstElementChild;
+            alert(first.innerHTML);
         });
 
         myClick("btn07", function () {
             const bj = document.getElementById("bj");
             const pn = bj.parentNode;
-            alert(pn.innerHTML);
+            alert(pn);
         });
 
-        
-    }
+        myClick("btn08", function () {
+            const android = document.getElementById("android");
+            const prev = android.previousElementSibling;
+            alert(prev.innerHTML);
+        });
+
+        myClick("btn09", function () {
+            const username = document.getElementById("username");
+            alert(username.value);
+        });
+
+        myClick("btn10", function () {
+            const username = document.getElementById("username");
+            username.value = "catzhang";
+        });
+
+        myClick("btn11", function () {
+            const bj = document.getElementById("bj");
+            alert(bj.innerText);
+        });
+    };
 </script>
 </html>
