@@ -100,8 +100,7 @@
 
             myClick("btn07", function () {
                 let li = document.createElement("li");
-                let gzText = document.createTextNode("广州");
-                li.appendChild(gzText);
+                li.innerHTML = "广州";
                 const city = document.getElementById("city");
                 city.appendChild(li);
             });
