@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CssStyle</title>
+	<style>
+		#box1 {
+			height: 200px;
+			background-color: #bbffaa;
+		}
+	</style>
+	<script>
+        window.onload = function () {
+            const box1 = document.getElementById("box1");
+            const btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                alert(getComputedStyle(box1, null).width);
+            };
+        };
+	</script>
+</head>
+<body>
+<button id="btn01">点击一下</button>
+<br><br>
+<div id="box1"></div>
+</body>
+</html>
