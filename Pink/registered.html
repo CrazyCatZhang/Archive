@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registered</title>
+	<style>
+		.register {
+			width: 500px;
+		}
+	</style>
+</head>
+<body>
+<h3>青春不常在，抓紧谈恋爱</h3>
+<form action="#">
+	<table class="register">
+		<tr>
+			<td>性别：</td>
+			<td>
+				<label for="man">男</label><input type="radio" name="sex" value="man" id="man">
+				<label for="woman">女</label><input type="radio" name="sex" value="woman" id="woman">
+			</td>
+		</tr>
+		<tr>
+			<td>生日：</td>
+			<td class="year">
+				<select name="birthday-year" id="year">
+					<option value="请选择年">请选择年</option>
+					<option value="1990">1990</option>
+					<option value="1991">1991</option>
+					<option value="1992">1992</option>
+					<option value="1993">1993</option>
+					<option value="1994">1994</option>
+				</select>
+				<select name="birthday-month" id="month">
+					<option value="请选择月">请选择月</option>
+					<option value="1">1月</option>
+					<option value="2">2月</option>
+					<option value="3">3月</option>
+					<option value="4">4月</option>
+					<option value="5">5月</option>
+				</select>
+				<select name="birthday-day" id="day">
+					<option value="请选择日">请选择日</option>
+					<option value="1">1日</option>
+					<option value="2">2日</option>
+					<option value="3">3日</option>
+					<option value="4">4日</option>
+					<option value="5">5日</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>所在地区：</td>
+			<td>
+				<label>
+					<input type="text" value="重庆思密达">
+				</label>
+			</td>
+		</tr>
+		<tr>
+			<td>婚姻状况：</td>
+			<td>
+				<input type="radio" name="marry" value="unmarried" id="unmarried" checked="checked"><label for="unmarried">未婚</label>
+				<input type="radio" name="marry" value="married" id="married"><label for="married">已婚</label>
+				<input type="radio" name="marry" value="divorce" id="divorce"><label for="divorce">离婚</label>
+			</td>
+		</tr>
+		<tr>
+			<td>学历：</td>
+			<td>
+				<label>
+					<input type="text" value="博士后">
+				</label>
+			</td>
+		</tr>
+		<tr>
+			<td>喜欢的类型：</td>
+			<td>
+				<label>
+					<input type="checkbox" name="types">妩媚的
+				</label>
+				<label>
+					<input type="checkbox" name="types">可爱的
+				</label>
+				<label>
+					<input type="checkbox" name="types">小鲜肉
+				</label>
+				<label>
+					<input type="checkbox" name="types">老腊肉
+				</label>
+				<label>
+					<input type="checkbox" name="types" checked="checked">都喜欢
+				</label>
+			</td>
+		</tr>
+		<tr>
+			<td>自我介绍：</td>
+			<td>
+				<label>
+					<textarea name="introduce" id="introduce" cols="30" rows="5"></textarea>
+				</label>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="submit" value="免费注册">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<label>
+					<input type="checkbox" name="regulations" checked="checked">我同意注册条款和会员加入标准
+				</label>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<h2>我承诺</h2>
+				<ul>
+					<li>年满18岁，单身</li>
+					<li>抱着严肃的态度</li>
+					<li>真诚寻找另一半</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
