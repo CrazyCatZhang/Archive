@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TuDou</title>
+	<style>
+        .tuDou {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: #bfa;
+            margin: 100px auto;
+        }
+
+        .tuDou img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3) url("img/arr.png") no-repeat center;
+        }
+
+        .tuDou:hover .mask {
+            display: block;
+        }
+	</style>
+</head>
+<body>
+<div class="tuDou">
+	<div class="mask"></div>
+	<img src="img/tudou.jpg" alt="">
+</div>
+</body>
+</html>
