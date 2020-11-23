@@ -1,0 +1,179 @@
+.main {
+    width: 980px;
+    height: 455px;
+    margin: 10px 0 0 219px;
+}
+
+.focus {
+    position: relative;
+    width: 720px;
+    height: 455px;
+}
+
+.arrow_l,
+.arrow_r {
+    position: absolute;
+    width: 24px;
+    height: 40px;
+    top: 50%;
+    margin-top: -20px;
+    background: rgba(0, 0, 0, .3);
+    text-align: center;
+    line-height: 40px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.arrow_r {
+    right: 0;
+}
+
+.circle {
+    position: absolute;
+    left: 50px;
+    bottom: 10px;
+}
+
+.circle li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.current {
+    background-color: #ffffff;
+}
+
+.newsflash {
+    width: 250px;
+    height: 455px;
+}
+
+.news {
+    height: 163px;
+    border: 1px solid #cccccc;
+}
+
+.news_hd {
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 1px dotted #cccccc;
+    font-size: 14px;
+    padding: 0 15px;
+}
+
+.news_hd a {
+    float: right;
+    font-size: 12px;
+    font-family: 'icomoon';
+}
+
+.news_bd {
+    padding: 10px 0 0 15px;
+}
+
+.news_bd li {
+    height: 23px;
+}
+
+.lifeservice {
+    overflow: hidden;
+    height: 208px;
+    border: 1px solid #cccccc;
+    border-top: none;
+}
+
+.lifeservice ul {
+    width: 252px;
+}
+
+.lifeservice li {
+    float: left;
+    width: 62px;
+    height: 70px;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+.lifeservice li a {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.lifeservice li p {
+    text-align: center;
+}
+
+.service_ico {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("../img/icons.png") no-repeat;
+    margin: 10px auto;
+}
+
+.service_ico_huafei {
+    background-position: -16px -17px;
+}
+
+.bargain {
+    height: 75px;
+    margin-top: 6px;
+}
+
+.bargain img {
+    vertical-align: bottom;
+}
+
+.recommend {
+    height: 163px;
+    margin-top: 10px;
+    background-color: #bfa;
+}
+
+.recom_hd {
+    float: left;
+    width: 200px;
+    height: 163px;
+    background-color: #5c5251;
+    text-align: center;
+    color: #ffffff;
+}
+
+.recom_hd img {
+    margin: 30px 0 10px 0;
+}
+
+.recom_hd h3 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.recom_bd {
+    float: left;
+    width: 1000px;
+    height: 163px;
+    background-color: #ebebeb;
+}
+
+.recom_bd li {
+    float: left;
+    width: 249px;
+    height: 145px;
+    margin-top: 10px;
+    border-right: 1px solid #cccccc;
+}
+
+.recom_bd li:last-child {
+    border-right: none;
+}
+
+.recom_bd img {
+
+}
