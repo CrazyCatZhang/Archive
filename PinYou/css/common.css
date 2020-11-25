@@ -173,11 +173,13 @@
     margin-left: 1px;
     padding: 0 10px;
     color: #ffffff;
+    transition: all 0.5s;
 }
 
 .menu_item:hover {
     color: #c81623;
     background-color: #ffffff;
+    padding-left: 20px;
 }
 
 .menu_item:hover a {
