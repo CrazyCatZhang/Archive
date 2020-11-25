@@ -243,3 +243,55 @@
     text-align: center;
     border-bottom: 1px solid #cccccc;
 }
+
+.box_bd li {
+    overflow: hidden;
+}
+
+.box_bd img {
+    transition: all 0.2s;
+}
+
+.box_bd img:hover {
+    margin-left: 8px;
+}
+
+.fixedtool {
+    position: fixed;
+    width: 66px;
+    top: 200px;
+    left: 50%;
+    margin-left: -676px;
+    background-color: #ffffff;
+}
+
+.fixedtool li {
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    cursor: pointer;
+}
+
+.fixedtool .current {
+    color: #ffffff;
+    background-color: #c81623;
+}
+
+.Brand-list {
+    height: 37px;
+    margin: 10px 0;
+    padding: 15px 0;
+    background-color: #f7f7f7;
+}
+
+.Brand-list li {
+    float: left;
+    padding: 0 10px;
+    border-right: 1px solid #cccccc;
+}
+
+.Brand-item:last-child {
+    border-right: none;
+}
