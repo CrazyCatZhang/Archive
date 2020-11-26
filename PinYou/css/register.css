@@ -1,0 +1,139 @@
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+.header {
+    height: 82px;
+    line-height: 82px;
+    border-bottom: 2px solid #b1191a;
+}
+
+.registerarea {
+    height: 520px;
+    border: 1px solid #cccccc;
+    margin-top: 20px;
+}
+
+.registerarea h3 {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #cccccc;
+    background-color: #ececec;
+    padding: 0 10px;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.registerarea h3 em {
+    float: right;
+    font-size: 14px;
+}
+
+.registerarea h3 em a {
+    color: #c81623;
+}
+
+.register_form {
+    width: 600px;
+    height: 400px;
+    margin: 40px auto 0;
+}
+
+.register_form li {
+    margin-bottom: 15px;
+}
+
+.register_form label {
+    display: inline-block;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    text-align: right;
+}
+
+.register_form .inp {
+    width: 238px;
+    height: 34px;
+    border: 1px solid #cccccc;
+    margin-left: 10px;
+}
+
+.error {
+    color: #df3033;
+    margin-left: 10px;
+}
+
+.error_icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../img/error.png") no-repeat;
+    vertical-align: middle;
+}
+
+.safe {
+    padding-left: 176px;
+    color: #b2b2b2;
+}
+
+.safe em {
+    padding: 0 12px;
+    margin-right: 1px;
+    color: #ffffff;
+}
+
+.ruo {
+    margin-left: 10px;
+    background-color: #de1111;
+}
+
+.zhong {
+    background-color: #40b83f;
+}
+
+.qiang {
+    background-color: #f79100;
+}
+
+.agree {
+    padding-left: 120px;
+    margin-top: 32px;
+}
+
+.agree .checkbox {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.agree a {
+    margin-left: 5px;
+    color: #1ba1e6;
+}
+
+.over {
+    width: 200px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #c81623;
+    margin: 30px 0 0 130px;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.footer {
+    height: 120px;
+    text-align: center;
+}
+
+.links {
+    height: 30px;
+    margin-top: 20px;
+}
+
+.copyright {
+    line-height: 20px;
+}
