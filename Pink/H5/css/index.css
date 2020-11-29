@@ -6,13 +6,34 @@ body {
     font-size: 14px;
     font-family: -apple-system, Helvetica, sans-serif;
     color: #666666;
-    background-color: #333333;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+img,
+a {
+    -webkit-touch-callout: none;
 }
 
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    color: #666666;
+    text-decoration: none;
 }
 
 .app {
@@ -133,3 +154,61 @@ ul {
 .slider img {
     width: 100%;
 }
+
+.brand {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.brand div {
+    float: left;
+    width: 33.33%;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+nav {
+    padding-top: 5px;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+nav a img {
+    width: 40px;
+    margin: 10px 0;
+}
+
+span {
+    display: block;
+}
+
+.news {
+    margin-top: 20px;
+}
+
+.news a {
+    float: left;
+    box-sizing: border-box;
+    border-left: 1px solid #cccccc;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+.news a:nth-child(n+2) {
+    width: 25%;
+}
+
+.news img {
+    width: 100%;
+}
+
+
