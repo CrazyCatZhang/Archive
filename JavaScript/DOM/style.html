@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Style</title>
 	<style>
-		#box1 {
-			width: 200px;
-			height: 200px;
-			background-color: #bfa;
-		}
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
 	</style>
 
 	<script>
@@ -24,6 +24,10 @@
             btn02.onclick = function () {
                 alert(box1.style.width);
             };
+
+            function getStyle(obj, name) {
+                return window.getComputedStyle ? getComputedStyle(obj, null)[name] : obj.currentStyle[name];
+            }
         };
 	</script>
 </head>
