@@ -5,7 +5,7 @@
 	<title>Title</title>
 	<style>
         #box1 {
-	        position: absolute;
+            position: absolute;
             width: 100px;
             height: 100px;
             background-color: #bfa;
@@ -17,10 +17,10 @@
             document.onmousemove = function (event) {
                 let st = document.documentElement.scrollTop;
                 let sl = document.documentElement.scrollLeft;
-			    let left = event.clientX;
-			    let top = event.clientY;
-			    box1.style.left = left + sl + "px";
-			    box1.style.top = top + st + "px";
+                let left = event.clientX;
+                let top = event.clientY;
+                box1.style.left = left + sl + "px";
+                box1.style.top = top + st + "px";
             };
         };
 	</script>
