@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        #box1 {
+	        position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+	</style>
+	<script>
+        window.onload = function () {
+            const box1 = document.getElementById('box1');
+            document.onmousemove = function (event) {
+                let st = document.documentElement.scrollTop;
+                let sl = document.documentElement.scrollLeft;
+			    let left = event.clientX;
+			    let top = event.clientY;
+			    box1.style.left = left + sl + "px";
+			    box1.style.top = top + st + "px";
+            };
+        };
+	</script>
+</head>
+<body style="height: 1500px; width: 2000px;">
+<div id="box1"></div>
+</body>
+</html>
