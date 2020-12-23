@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        #box1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+	</style>
+	<script>
+        window.onload = function () {
+            const box1 = document.getElementById("box1");
+            box1.onmousedown = function (event) {
+                let ol = event.clientX - box1.offsetLeft;
+                let ot = event.clientY - box1.offsetTop;
+
+                document.onmousemove = function (event) {
+                    let left = event.clientX - ol;
+                    let top = event.clientY - ot;
+                    box1.style.left = left + 'px';
+                    box1.style.top = top + 'px';
+                };
+
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+
+                return false;
+            };
+        };
+	</script>
+</head>
+<body>
+<div id="box1">
+
+</div>
+</body>
+</html>
