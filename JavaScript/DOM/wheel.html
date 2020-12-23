@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+	</style>
+	<script>
+        window.onload = function () {
+            const box1 = document.getElementById('box1');
+            box1.onwheel = function (event) {
+                if (event.deltaY > 0) {
+                    box1.style.height = box1.clientHeight - 10 + "px";
+                } else {
+                    box1.style.height = box1.clientHeight + 10 + "px";
+                }
+
+                event.preventDefault();
+
+                return false;
+            };
+        };
+	</script>
+</head>
+<body style="height: 1500px;">
+<div id="box1">
+
+</div>
+</body>
+</html>
