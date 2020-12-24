@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            position: absolute;
+        }
+	</style>
+	<script>
+        window.onload = function () {
+            const box1 = document.getElementById("box1");
+            let speed = 10;
+            let dir = 0;
+            setInterval(function () {
+                switch (dir) {
+                    case 37:
+                        box1.style.left = box1.offsetLeft - speed + "px";
+                        break;
+                    case 39:
+                        box1.style.left = box1.offsetLeft + speed + "px";
+                        break;
+                    case 38:
+                        box1.style.top = box1.offsetTop - speed + "px";
+                        break;
+                    case 40:
+                        box1.style.top = box1.offsetTop + speed + "px";
+                        break;
+                }
+            }, 30)
+            document.onkeydown = function (e) {
+                let speed = 10;
+                if (e.shiftKey) {
+                    speed = 100;
+                } else {
+                    speed = 10;
+                }
+                dir = e.keyCode;
+            };
+
+            document.onkeyup = function (e) {
+                dir = 0;
+            };
+        };
+	</script>
+</head>
+<body>
+<div id="box1">
+
+</div>
+</body>
+</html>
