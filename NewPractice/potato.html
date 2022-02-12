@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        .potato {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            margin: 100px auto;
+        }
+
+        .potato img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .4) url("images/arr.png") no-repeat center;
+        }
+
+        .potato:hover .mask {
+            display: block;
+        }
+	</style>
+</head>
+<body>
+<div class="potato">
+	<div class="mask"></div>
+	<img src="images/tudou.jpg" alt="">
+</div>
+</body>
+</html>
