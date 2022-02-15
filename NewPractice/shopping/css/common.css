@@ -53,7 +53,6 @@
 .header {
     position: relative;
     height: 105px;
-    background-color: skyblue;
 }
 
 .logo {
@@ -61,5 +60,83 @@
     top: 25px;
     width: 171px;
     height: 61px;
-    background-color: #fff;
+}
+
+.logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url("../images/logo.png") no-repeat;
+    font-size: 0;
+}
+
+.search {
+    position: absolute;
+    left: 346px;
+    top: 25px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+.search input {
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+
+.search button {
+    float: left;
+    width: 80px;
+    height: 32px;
+    background-color: #b1191a;
+}
+
+.hot_words {
+    position: absolute;
+    top: 66px;
+    left: 346px;
+}
+
+.hot_words a {
+    margin: 0 10px;
+}
+
+.shop_car {
+    position: absolute;
+    right: 60px;
+    top: 25px;
+    width: 140px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+}
+
+.shop_car:before {
+    content: '\e93a';
+    font-family: 'icomoon', serif;
+    margin-right: 5px;
+    color: #b1191a;
+}
+
+.shop_car:after {
+    content: '\e920';
+    font-family: 'icomoon', serif;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.count {
+    position: absolute;
+    left: 105px;
+    top: -5px;
+    height: 14px;
+    line-height: 14px;
+    color: #ffffff;
+    background-color: #b1191a;
+    padding: 0 5px;
+    border-radius: 7px 7px 7px 0;
 }
