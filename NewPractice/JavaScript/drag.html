@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: absolute;
+            top: 400px;
+            left: 200px;
+        }
+	</style>
+	<script>
+        window.onload = function () {
+            let box1 = document.getElementById('box1');
+            let box2 = document.getElementById('box2');
+            drag(box1);
+            drag(box2);
+
+            function drag(obj) {
+                obj.onmousedown = function (event) {
+                    let ol = event.offsetX;
+                    let ot = event.offsetY;
+
+                    document.onmousemove = function (event) {
+                        let left = event.clientX - ol;
+                        let top = event.clientY - ot;
+
+                        obj.style.left = left + 'px';
+                        obj.style.top = top + 'px';
+                    };
+
+                    document.onmouseup = function () {
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                    }
+                };
+            }
+        };
+	</script>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+</body>
+</html>
