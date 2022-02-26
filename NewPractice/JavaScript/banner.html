@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            /*设置宽和高*/
+            width: 520px;
+            height: 333px;
+            /*居中*/
+            margin: 50px auto;
+            /*设置背景颜色*/
+            background-color: greenyellow;
+            /*设置padding*/
+            padding: 10px 0;
+            /*开启相对定位*/
+            position: relative;
+            /*裁剪溢出的内容*/
+            overflow: hidden;
+        }
+
+        #imgList {
+            list-style: none;
+            position: absolute;
+        }
+
+        #imgList li {
+            float: left;
+            margin: 0 10px;
+        }
+
+        /*设置导航按钮*/
+        #navDiv {
+            /*开启绝对定位*/
+            position: absolute;
+            /*设置位置*/
+            bottom: 15px;
+            /*设置left值
+				 outer宽度  520
+				 navDiv宽度 25*5 = 125
+					 520 - 125 = 395/2 = 197.5
+			 * */
+            /*left: 197px;*/
+        }
+
+        #navDiv a {
+            /*设置超链接浮动*/
+            float: left;
+            /*设置超链接的宽和高*/
+            width: 15px;
+            height: 15px;
+            /*设置背景颜色*/
+            background-color: red;
+            /*设置左右外边距*/
+            margin: 0 5px;
+            /*设置透明*/
+            opacity: 0.5;
+        }
+
+        /*设置鼠标移入的效果*/
+        #navDiv a:hover {
+            background-color: black;
+        }
+	</style>
+
+	<script src="js/tools.js"></script>
+	<script>
+        window.onload = function () {
+            let imgList = document.getElementById('imgList');
+            let imgArr = document.getElementsByTagName("img");
+            console.log(imgArr);
+            imgList.style.width = imgArr.length * 520 + 'px';
+
+            let navDiv = document.getElementById('navDiv');
+            let outer = document.getElementById('outer');
+            navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth) / 2 + 'px';
+
+            let index = 0;
+            let timer;
+            let allA = document.getElementsByTagName('a');
+            allA[index].style.backgroundColor = 'black';
+            for (let i = 0; i < allA.length; i++) {
+                allA[i].num = i;
+                allA[i].onclick = function () {
+                    clearInterval(timer);
+                    index = this.num;
+                    setA();
+                    move(imgList, 'left', -520 * index, 20, function () {
+                        autoChange();
+                    });
+                };
+            }
+
+            function setA() {
+                // console.log(imgArr.length);
+                if (index >= imgArr.length - 1) {
+                    index = 0;
+                    imgList.style.left = 0 + 'px';
+                }
+                for (let i = 0; i < allA.length; i++) {
+                    allA[i].style.backgroundColor = "";
+                }
+                allA[index].style.backgroundColor = "black";
+            }
+
+            function autoChange() {
+                timer = setInterval(function () {
+                    //使索引自增
+                    index++;
+
+                    //判断index的值
+                    index %= imgArr.length;
+
+                    //执行动画，切换图片
+                    move(imgList, "left", -520 * index, 20, function () {
+                        setA();
+                    });
+                }, 3000);
+            }
+
+            autoChange();
+        };
+	</script>
+</head>
+<body>
+<div id="outer">
+	<!-- 创建一个ul，用于放置图片 -->
+	<ul id="imgList">
+		<li><img src="img/1.jpg" alt=""></li>
+		<li><img src="img/2.jpg" alt=""></li>
+		<li><img src="img/3.jpg" alt=""></li>
+		<li><img src="img/4.jpg" alt=""></li>
+		<li><img src="img/5.jpg" alt=""></li>
+		<li><img src="img/1.jpg" alt=""></li>
+	</ul>
+	<!--创建导航按钮-->
+	<div id="navDiv">
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+	</div>
+</div>
+</body>
+</html>
