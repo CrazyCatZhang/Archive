@@ -11,7 +11,7 @@ function move(obj, attr, target, speed, callback) {
     obj.timer = setInterval(function () {
         let oldValue = parseInt(getStyle(obj, attr));
         let newValue = oldValue + speed;
-        if((speed < 0 && newValue < target) || (speed > 0 && newValue > target)) {
+        if ((speed < 0 && newValue < target) || (speed > 0 && newValue > target)) {
             newValue = target;
         }
         obj.style[attr] = newValue + 'px';
@@ -20,4 +20,28 @@ function move(obj, attr, target, speed, callback) {
             callback && callback();
         }
     }, 30);
+}
+
+function hasClass(obj, cls) {
+    let reg = new RegExp('\\b' + cls + '\\b');
+    return reg.test(obj.className);
+}
+
+function addClass(obj, cls) {
+    if (!hasClass(obj, cls)) {
+        obj.className += ' ' + cls;
+    }
+}
+
+function removeClass(obj, cls) {
+    let reg = new RegExp('\\b' + cls + '\\b');
+    obj.className = obj.className.replace(reg, '');
+}
+
+function toggleClass(obj, cls) {
+    if (hasClass(obj, cls)) {
+        removeClass(obj, cls);
+    } else {
+        addClass(obj, cls);
+    }
 }
