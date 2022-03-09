@@ -41,36 +41,42 @@ window.addEventListener('load', function () {
     ol.children[0].className = 'current';
     let first = ul.children[0].cloneNode(true);
     ul.appendChild(first);
+    let flag = true;
     arrow_r.addEventListener('click', function () {
-        if (num === ul.children.length - 1) {
-            ul.style.left = 0 + 'px';
-            num = 0;
+        if (flag) {
+            flag = false;
+            if (num === ul.children.length - 1) {
+                ul.style.left = 0 + 'px';
+                num = 0;
+            }
+            num++;
+            animate(ul, -num * focusWidth, function () {
+                flag = true;
+            })
+            circle++;
+            if (circle === ul.children.length - 1) {
+                circle = 0;
+            }
+            circleChange();
         }
-        num++;
-        animate(ul, -num * focusWidth, function () {
-
-        })
-        circle++;
-        if (circle === ul.children.length - 1) {
-            circle = 0;
-        }
-        circleChange();
     });
     arrow_l.addEventListener('click', function () {
-        console.log(num);
-        if (num === 0) {
-            num = ul.children.length - 1;
-            ul.style.left = -num * focusWidth + 'px';
+        if (flag) {
+            flag = false;
+            if (num === 0) {
+                num = ul.children.length - 1;
+                ul.style.left = -num * focusWidth + 'px';
+            }
+            num--;
+            animate(ul, -num * focusWidth, function () {
+                flag = true;
+            })
+            circle--;
+            if (circle < 0) {
+                circle = ol.children.length - 1;
+            }
+            circleChange();
         }
-        num--;
-        animate(ul, -num * focusWidth, function () {
-
-        })
-        circle--;
-        if (circle < 0) {
-            circle = ol.children.length - 1;
-        }
-        circleChange();
     });
 
     function circleChange() {
