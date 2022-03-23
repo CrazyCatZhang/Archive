@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #test {
+            position: absolute;
+            left: 200px;
+            top: 300px;
+            width: 10px;
+            height: 10px;
+            background: black;
+        }
+
+        .box {
+            position: absolute;
+            border: 1px solid;
+        }
+	</style>
+</head>
+<body>
+<div id="test"></div>
+</body>
+<script>
+    let testNode = document.querySelector("#test");
+    let startX = testNode.offsetLeft;
+    let startY = testNode.offsetTop;
+    //角度
+    let deg = 0;
+    let step = 100;
+
+
+    setInterval(function () {
+        deg++;
+
+        testNode.style.left = startX + (deg * Math.PI / 180) * step / 2 + 'px';
+        testNode.style.top = startY + Math.sin(deg * Math.PI / 180) * step * 2 + "px";
+
+        let boxNode = document.createElement("div");
+        boxNode.classList.add("box");
+        boxNode.style.left = testNode.offsetLeft + "px";
+        boxNode.style.top = testNode.offsetTop + "px";
+        document.body.appendChild(boxNode);
+
+    }, 1000 / 60)
+</script>
+</html>
