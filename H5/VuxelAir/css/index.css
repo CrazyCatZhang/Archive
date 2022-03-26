@@ -234,6 +234,37 @@ body {
     transform: translateZ(-200px);
   }
 }
+#mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+}
+#mask .up {
+  width: 100%;
+  height: 50%;
+  background: deepskyblue;
+  transition: 1s height;
+}
+#mask .down {
+  width: 100%;
+  height: 50%;
+  background: deepskyblue;
+  transition: 1s height;
+  position: absolute;
+  bottom: 0;
+}
+#mask .line {
+  height: 4px;
+  width: 0;
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -2px;
+  z-index: 101;
+  transition: 1s width;
+}
 #head {
   width: 100%;
   background-color: #fff !important;
@@ -247,6 +278,13 @@ body {
 #head .headMain .logo {
   float: left;
   margin-top: 30px;
+}
+#head .headMain .music {
+  width: 14px;
+  height: 14px;
+  background: url(../img/musicon.gif);
+  float: left;
+  margin: 50px 0 0 5px;
 }
 #head .headMain .nav {
   float: right;
@@ -291,7 +329,8 @@ body {
 }
 #content .list li {
   position: relative;
-  background-position: center !important;
+  background-position: 50% 50% !important;
+  overflow: hidden;
 }
 #content .list li section {
   position: absolute;
@@ -311,6 +350,7 @@ body {
   height: 100%;
   perspective: 1000px;
   transform-style: preserve-3d;
+  transition: 1s;
 }
 #content .list .home .home1 li {
   position: absolute;
@@ -362,6 +402,7 @@ body {
   right: 0;
   bottom: 0;
   text-align: center;
+  transition: 1s;
 }
 #content .list .home .home2 li {
   border-radius: 50%;
@@ -381,9 +422,13 @@ body {
   background: url(../img/bg2.jpg) no-repeat;
 }
 #content .list .course .course1 {
+  position: relative;
+  z-index: 2;
   margin: 50px;
 }
 #content .list .course .course2 {
+  position: relative;
+  z-index: 2;
   width: 400px;
   margin-left: 50px;
 }
@@ -392,6 +437,7 @@ body {
   width: 480px;
   right: 50px;
   top: 70px;
+  z-index: 2;
 }
 #content .list .course .course3 .line {
   position: absolute;
@@ -488,13 +534,44 @@ body {
 #content .list .course .course3 .item:nth-of-type(12) .backFace {
   background: url(../img/bks.png) no-repeat;
 }
+#content .list .course .plane1 {
+  width: 359px;
+  height: 283px;
+  background: url(../img/plane1.png) no-repeat;
+  position: absolute;
+  left: 300px;
+  top: -100px;
+  transition: 1s transform;
+}
+#content .list .course .plane2 {
+  width: 309px;
+  height: 249px;
+  background: url(../img/plane2.png) no-repeat;
+  position: absolute;
+  left: -100px;
+  top: 200px;
+  transition: 1s transform;
+}
+#content .list .course .plane3 {
+  width: 230px;
+  height: 182px;
+  background: url(../img/plane3.png) no-repeat;
+  position: absolute;
+  left: 300px;
+  top: 400px;
+  transition: 1s transform;
+}
 #content .list .works {
   background: url(../img/bg4.jpg) no-repeat;
 }
 #content .list .works .works1 {
+  position: relative;
+  z-index: 2;
   margin: 50px 0 100px 50px;
 }
 #content .list .works .works2 {
+  position: relative;
+  z-index: 2;
   margin-left: 50px;
 }
 #content .list .works .works2 .item {
@@ -545,6 +622,34 @@ body {
   height: 191px;
   background: url(../img/robot.png) no-repeat;
   animation: works3Move 4s linear infinite;
+  z-index: 2;
+}
+#content .list .works .pencil1 {
+  width: 180px;
+  height: 97px;
+  background: url(../img/pencel1.png) no-repeat;
+  position: absolute;
+  transition: 1s transform;
+  left: 500px;
+  top: 0;
+}
+#content .list .works .pencil2 {
+  width: 268px;
+  height: 38px;
+  background: url(../img/pencel2.png) no-repeat;
+  position: absolute;
+  transition: 1s transform;
+  left: 300px;
+  top: 250px;
+}
+#content .list .works .pencil3 {
+  width: 441px;
+  height: 231px;
+  background: url(../img/pencel3.png) no-repeat;
+  position: absolute;
+  transition: 1s transform;
+  left: 650px;
+  top: 300px;
 }
 #content .list .about {
   background: url(../img/bg3.jpg) no-repeat;
@@ -585,6 +690,7 @@ body {
 #content .list .about .about3 .item:nth-child(1) {
   left: 750px;
   top: 50px;
+  transition: 1s transform;
 }
 #content .list .about .about3 .item:nth-child(1) span {
   background: url(../img/about2.jpg) no-repeat;
@@ -594,6 +700,7 @@ body {
 #content .list .about .about3 .item:nth-child(2) {
   left: 600px;
   top: 290px;
+  transition: 1s transform;
 }
 #content .list .about .about3 .item:nth-child(2) span {
   background: url(../img/about4.jpg) no-repeat;
@@ -613,5 +720,83 @@ body {
 }
 #content .list .team {
   background: url(../img/bg5.jpg) no-repeat;
+}
+#content .list .team .team1 {
+  float: left;
+  width: 400px;
+  margin: 50px;
+  transition: 1s transform;
+}
+#content .list .team .team2 {
+  float: right;
+  width: 400px;
+  margin: 50px;
+  transition: 1s transform;
+}
+#content .list .team .team3 {
+  position: absolute;
+  left: 50%;
+  top: 250px;
+  margin-left: -472px;
+  width: 944px;
+  height: 448px;
+}
+#content .list .team .team3 ul {
+  position: relative;
+  height: 100%;
+}
+#content .list .team .team3 ul li {
+  width: 118px;
+  height: 100%;
+  background: url(../img/team.png) no-repeat;
+  float: left;
+  transition: 1s opacity;
+}
+#content .list .team .team3 ul li:nth-child(1) {
+  background-position: 0, 0 !important;
+}
+#content .list .team .team3 ul li:nth-child(2) {
+  background-position: -118px, 0 !important;
+}
+#content .list .team .team3 ul li:nth-child(3) {
+  background-position: -236px, 0 !important;
+}
+#content .list .team .team3 ul li:nth-child(4) {
+  background-position: -354px, 0 !important;
+}
+#content .list .team .team3 ul li:nth-child(5) {
+  background-position: -472px, 0 !important;
+}
+#content .list .team .team3 ul li:nth-child(6) {
+  background-position: -590px, 0 !important;
+}
+#content .list .team .team3 ul li:nth-child(7) {
+  background-position: -708px, 0 !important;
+}
+#content .list .team .team3 ul li:nth-child(8) {
+  background-position: -826px, 0 !important;
+}
+#content .list .team .team3 canvas {
+  position: absolute;
+  top: 0;
+}
+#content .dot {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+}
+#content .dot li {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 4px rgba(25, 25, 25, 0.8);
+  cursor: pointer;
+  margin-top: 10px;
+}
+#content .dot li.active {
+  background: white;
+  cursor: default;
+  opacity: 0.8;
 }
 /*# sourceMappingURL=index.css.map */
