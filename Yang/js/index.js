@@ -8,7 +8,7 @@
     const CANVAS_HEIGHT = 150;
     const CANVAS_ID = 'canvas';
 
-    let texts = ['MY DEAR', 'ZHAO YANG', 'ARE YOU', 'LOOK UP AT THE', 'STARRY SKY', 'ARE YOU', 'LOOKING AT THE', 'SAME STAR', 'WITH ME ?', 'HAPPY', 'ONE MONTH', 'ANNIVERSARY', 'I MISS YOU', 'I LOVE YOU', 'AS WHO YOU ARE','You Complete Me'];
+    let texts = ['My Dear', 'Rainbow', 'Are You', 'Look Up At The', 'Starry Sky', 'Are You', 'Looking At The', 'Same Star', 'With Me ?', 'Hope You', 'Happy Everyday', 'Remember', 'What Past Is', 'Prologue', 'Everything', 'Will Be Ok'];
 
     let canvas,
         ctx,
@@ -114,7 +114,6 @@
         canvas.style.right = '0%';
         canvas.style.marginTop = window.innerHeight * .15 + 'px';
     }
-
 
 
     function event() {
