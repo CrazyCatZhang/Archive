@@ -8,7 +8,7 @@
     const CANVAS_HEIGHT = 150;
     const CANVAS_ID = 'canvas';
 
-    let texts = ['My Dear', 'Rainbow', 'Are You', 'Look Up At The', 'Starry Sky', 'Are You', 'Looking At The', 'Same Star', 'With Me ?', 'Hope You', 'Happy Everyday', 'Remember', 'What Past Is', 'Prologue', 'Everything', 'Will Be Ok'];
+    let texts = ['My Dear', 'ZhouZhou', 'Are You', 'Look Up At The', 'Starry Sky', 'Are You', 'Looking At The', 'Same Star', 'With Me ?', 'Hope You', 'Happy Everyday', 'I Want to', 'Tell You', 'You Complete Me'];
 
     let canvas,
         ctx,
