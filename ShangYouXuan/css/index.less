@@ -1,0 +1,33 @@
+@import './mixin/clearfix.less';
+
+#wrapper {
+    #header {
+        .headTop {
+            background-color: #eaeaea;
+            height: 30px;
+
+            .headTopMain {
+                width: 1200px;
+                margin: 0 auto;
+                line-height: 30px;
+                .clearfix();
+
+                .left {
+                    h5{
+                        float: left;
+                        margin-right: 5px;
+                    }
+                    p{
+                        float: left;
+                        a{
+                            &:first-child{
+                                border-right: 1px solid #b3aeae;
+                                padding-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
