@@ -90,4 +90,36 @@
 #wrapper #header .headerBottom .headerBottomMain .search input::-webkit-input-placeholder {
   color: #bfa;
 }
+#wrapper #navWrap {
+  border-bottom: 2px solid #e1251b;
+}
+#wrapper #navWrap .navWrapMain {
+  width: 1200px;
+  margin: 0 auto;
+  *zoom: 1;
+}
+#wrapper #navWrap .navWrapMain::before,
+#wrapper #navWrap .navWrapMain::after {
+  content: "";
+  display: table;
+}
+#wrapper #navWrap .navWrapMain:after {
+  clear: both;
+}
+#wrapper #navWrap .navWrapMain a {
+  margin: 0 22px;
+  font-size: 16px;
+  color: #333;
+  float: left;
+  line-height: 50px;
+}
+#wrapper #navWrap .navWrapMain a:first-child {
+  width: 210px;
+  height: 50px;
+  background: #e1251b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
 /*# sourceMappingURL=index.css.map */
