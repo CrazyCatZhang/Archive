@@ -43,8 +43,20 @@ window.onload = function () {
             leftTop.appendChild(BigPic)
 
             smallPic.onmousemove = function (event) {
-                const left = event.clientX - smallPic.getBoundingClientRect().left - maskDiv.offsetWidth / 2
-                const top = event.clientY - smallPic.getBoundingClientRect().top - maskDiv.offsetHeight / 2
+                let left = event.clientX - smallPic.getBoundingClientRect().left - maskDiv.offsetWidth / 2
+                let top = event.clientY - smallPic.getBoundingClientRect().top - maskDiv.offsetHeight / 2
+
+                if (left < 0) {
+                    left = 0;
+                } else if (left > smallPic.clientWidth - maskDiv.offsetWidth) {
+                    left = smallPic.clientWidth - maskDiv.offsetWidth;
+                }
+
+                if (top < 0) {
+                    top = 0;
+                } else if (top > smallPic.clientHeight - maskDiv.offsetHeight) {
+                    top = smallPic.clientHeight - maskDiv.offsetHeight;
+                }
 
                 maskDiv.style.left = left + 'px'
                 maskDiv.style.top = top + 'px'
