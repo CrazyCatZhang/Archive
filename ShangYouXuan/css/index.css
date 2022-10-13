@@ -173,6 +173,7 @@
   overflow: hidden;
 }
 #wrapper #content .contentMain #center #left #leftTop #bigPic img {
+  position: absolute;
   width: 800px;
   height: 800px;
 }

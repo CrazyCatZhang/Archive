@@ -60,6 +60,10 @@ window.onload = function () {
 
                 maskDiv.style.left = left + 'px'
                 maskDiv.style.top = top + 'px'
+
+                const scale = (smallPic.clientWidth - maskDiv.offsetWidth) / (BigImg.offsetWidth - BigPic.clientWidth)
+                BigImg.style.left = -left / scale + "px"
+                BigImg.style.top = -top / scale + "px"
             }
 
             smallPic.onmouseleave = function () {
