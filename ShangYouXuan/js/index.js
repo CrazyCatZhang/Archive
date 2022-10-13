@@ -74,4 +74,22 @@ window.onload = function () {
     }
 
     bigClassBind()
+
+    function thumbnailData() {
+        const ul = document.querySelector('#wrapper #content .contentMain #center #left #leftBottom #piclist ul')
+        const imagesSrc = goodData.imagesSrc
+
+        for (let i = 0; i < imagesSrc.length; i++) {
+            const newLi = document.createElement('li')
+
+            const newImg = document.createElement('img')
+            newImg.src = imagesSrc[i].s
+
+            newLi.appendChild(newImg)
+
+            ul.appendChild(newLi)
+        }
+    }
+
+    thumbnailData()
 }
