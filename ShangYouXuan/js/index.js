@@ -1,4 +1,6 @@
 window.onload = function () {
+    let bigImgIndex = 0
+
     function navPathDataBind() {
         const navPath = document.getElementById('navPath')
         const path = goodData.path
@@ -27,6 +29,7 @@ window.onload = function () {
     function bigClassBind() {
         const smallPic = document.querySelector('#wrapper #content .contentMain #center #left #leftTop #smallPic')
         const leftTop = document.querySelector('#wrapper #content .contentMain #center #left #leftTop')
+        const imagesSrc = goodData.imagesSrc
 
         smallPic.onmouseenter = function () {
             const maskDiv = document.createElement('div')
@@ -36,7 +39,7 @@ window.onload = function () {
             BigPic.id = "bigPic"
 
             const BigImg = document.createElement('img')
-            BigImg.src = "assets/b1.png"
+            BigImg.src = imagesSrc[bigImgIndex].b
 
             BigPic.appendChild(BigImg)
             smallPic.appendChild(maskDiv)
@@ -92,4 +95,23 @@ window.onload = function () {
     }
 
     thumbnailData()
+
+    function thumbnailClick() {
+        const liNodes = document.querySelectorAll('#wrapper #content .contentMain #center #left #leftBottom #piclist ul li');
+
+        const smallPic_img = document.querySelector('#wrapper #content .contentMain #center #left #leftTop #smallPic img');
+
+        const imagesSrc = goodData.imagesSrc;
+
+        smallPic_img.src = imagesSrc[0].s
+
+        for (let i = 0; i < liNodes.length; i++) {
+            liNodes[i].onclick = function () {
+                bigImgIndex = i
+                smallPic_img.src = imagesSrc[i].s
+            }
+        }
+    }
+
+    thumbnailClick()
 }
