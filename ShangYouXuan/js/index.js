@@ -209,4 +209,23 @@ window.onload = function () {
     }
 
     rightBottomData()
+
+    function clickDDBind() {
+        const dlNodes = document.querySelectorAll('#wrapper #content .contentMain #center .right .rightBottom .chooseWrap dl')
+
+        for (let i = 0; i < dlNodes.length; i++) {
+            const ddNodes = dlNodes[i].querySelectorAll('dd')
+            for (let j = 0; j < ddNodes.length; j++) {
+                ddNodes[j].onclick = function () {
+                    for (let k = 0; k < ddNodes.length; k++) {
+                        ddNodes[k].style.color = "#666"
+                    }
+
+                    this.style.color = "red"
+                }
+            }
+        }
+    }
+
+    clickDDBind()
 }
