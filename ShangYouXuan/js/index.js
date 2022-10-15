@@ -146,4 +146,43 @@ window.onload = function () {
     }
 
     thumbnailArrowsClick()
+
+    function rightTopData() {
+        const rightTop = document.querySelector('#wrapper #content .contentMain #center .right .rightTop')
+        const goodsDetail = goodData.goodsDetail
+
+        rightTop.innerHTML = `<h3>${goodsDetail.title}</h3>
+                <p>${goodsDetail.recommend}</p>
+                <div class="priceWrap">
+                    <div class="priceTop">
+                        <span>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</span>
+                        <div class="price">
+                            <span>￥</span>
+                            <p>${goodsDetail.price}</p>
+                            <i>降价通知</i>
+                        </div>
+                        <p>
+                            <span>累计评价</span>
+                            <span>${goodsDetail.evaluateNum}</span>
+                        </p>
+                    </div>
+                    <div class="priceBottom">
+                        <span>促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</span>
+                        <p>
+                            <span>${goodsDetail.promoteSales.type}</span>
+                            <span>${goodsDetail.promoteSales.content}</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="support">
+                    <span>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持</span>
+                    <p>${goodsDetail.support}</p>
+                </div>
+                <div class="address">
+                    <span>配&nbsp;送&nbsp;至</span>
+                    <p>${goodsDetail.address}</p>
+                </div>`
+    }
+
+    rightTopData()
 }
