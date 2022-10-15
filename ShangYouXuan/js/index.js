@@ -185,4 +185,28 @@ window.onload = function () {
     }
 
     rightTopData()
+
+    function rightBottomData() {
+        const chooseWrap = document.querySelector('#wrapper #content .contentMain #center .right .rightBottom .chooseWrap')
+        const crumbData = goodData.goodsDetail.crumbData
+
+        for (let i = 0; i < crumbData.length; i++) {
+            const dlNode = document.createElement('dl')
+            const dtNode = document.createElement('dt')
+            dtNode.innerText = crumbData[i].title
+
+            dlNode.appendChild(dtNode)
+
+            for (let j = 0; j < crumbData[i].data.length; j++) {
+                const ddNode = document.createElement('dd')
+                ddNode.innerText = crumbData[i].data[j].type
+
+                dlNode.appendChild(ddNode)
+            }
+
+            chooseWrap.appendChild(dlNode)
+        }
+    }
+
+    rightBottomData()
 }
