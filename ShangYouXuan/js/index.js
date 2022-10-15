@@ -114,4 +114,36 @@ window.onload = function () {
     }
 
     thumbnailClick()
+
+    function thumbnailArrowsClick() {
+        const prev = document.querySelector('#wrapper #content .contentMain #center #left #leftBottom a.prev')
+        const next = document.querySelector('#wrapper #content .contentMain #center #left #leftBottom a.next')
+
+        const ul = document.querySelector('#wrapper #content .contentMain #center #left #leftBottom #piclist ul')
+
+        const liNodes = document.querySelectorAll('#wrapper #content .contentMain #center #left #leftBottom #piclist ul li')
+
+        let start = 0
+
+        const step = (liNodes[0].offsetWidth + 20) * 2
+        const endPosition = (liNodes.length - 5) * (liNodes[0].offsetWidth + 20)
+
+        prev.onclick = function () {
+            start -= step
+            if (start < 0) {
+                start = 0
+            }
+            ul.style.left = -start + "px"
+        }
+
+        next.onclick = function () {
+            start += step
+            if (start > endPosition) {
+                start = endPosition
+            }
+            ul.style.left = -start + "px"
+        }
+    }
+
+    thumbnailArrowsClick()
 }
