@@ -249,6 +249,23 @@ window.onload = function () {
                             choose.appendChild(markDiv)
                         }
                     })
+
+                    const aNodes = document.querySelectorAll('#wrapper #content .contentMain #center .right .rightBottom .choose .mark a')
+
+                    for (let k = 0; k < aNodes.length; k++) {
+                        aNodes[k].onclick = function () {
+
+                            arr[k] = 0
+
+                            const ddList = dlNodes[k].querySelectorAll('dd')
+                            for (let l = 0; l < ddList.length; l++) {
+                                ddList[l].style.color = '#666'
+                            }
+                            ddList[0].style.color = 'red'
+
+                            choose.removeChild(this.parentNode)
+                        }
+                    }
                 }
             }
         }
