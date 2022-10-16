@@ -212,16 +212,43 @@ window.onload = function () {
 
     function clickDDBind() {
         const dlNodes = document.querySelectorAll('#wrapper #content .contentMain #center .right .rightBottom .chooseWrap dl')
+        const choose = document.querySelector('#wrapper #content .contentMain #center .right .rightBottom .choose')
+        const arr = new Array(dlNodes.length).fill(0)
 
         for (let i = 0; i < dlNodes.length; i++) {
             const ddNodes = dlNodes[i].querySelectorAll('dd')
             for (let j = 0; j < ddNodes.length; j++) {
                 ddNodes[j].onclick = function () {
+
+                    choose.innerHTML = ''
+
                     for (let k = 0; k < ddNodes.length; k++) {
                         ddNodes[k].style.color = "#666"
                     }
 
                     this.style.color = "red"
+
+                    arr[i] = this.innerText
+
+                    arr.forEach(value => {
+                        if (value) {
+                            //创建div元素
+                            const markDiv = document.createElement('div')
+                            //并且设置class属性
+                            markDiv.className = 'mark'
+                            //并且设置值
+                            markDiv.innerText = value
+                            //创建a元素
+                            const aNode = document.createElement('a')
+                            //并且设置值
+                            aNode.innerText = 'X'
+                            //让div追加a 
+                            markDiv.appendChild(aNode)
+
+                            //让choose元素追加div
+                            choose.appendChild(markDiv)
+                        }
+                    })
                 }
             }
         }
