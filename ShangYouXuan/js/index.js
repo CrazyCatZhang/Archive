@@ -200,6 +200,7 @@ window.onload = function () {
             for (let j = 0; j < crumbData[i].data.length; j++) {
                 const ddNode = document.createElement('dd')
                 ddNode.innerText = crumbData[i].data[j].type
+                ddNode.setAttribute('price', crumbData[i].data[j].changePrice)
 
                 dlNode.appendChild(ddNode)
             }
@@ -228,7 +229,8 @@ window.onload = function () {
 
                     this.style.color = "red"
 
-                    arr[i] = this.innerText
+                    arr[i] = this
+                    changePrice(arr)
 
                     arr.forEach(value => {
                         if (value) {
@@ -237,7 +239,7 @@ window.onload = function () {
                             //并且设置class属性
                             markDiv.className = 'mark'
                             //并且设置值
-                            markDiv.innerText = value
+                            markDiv.innerText = value.innerText
                             //创建a元素
                             const aNode = document.createElement('a')
                             //并且设置值
@@ -256,6 +258,7 @@ window.onload = function () {
                         aNodes[k].onclick = function () {
 
                             arr[k] = 0
+                            changePrice(arr)
 
                             const ddList = dlNodes[k].querySelectorAll('dd')
                             for (let l = 0; l < ddList.length; l++) {
@@ -272,4 +275,18 @@ window.onload = function () {
     }
 
     clickDDBind()
+
+    function changePrice(arr) {
+        const oldPrice = document.querySelector('#wrapper #content .contentMain #center .right .rightTop .priceWrap .priceTop .price p')
+        let price = goodData.goodsDetail.price
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i]) {
+                const changePrice = Number(arr[i].getAttribute('price'))
+                price += changePrice
+            }
+        }
+
+        oldPrice.innerText = price
+    }
 }
