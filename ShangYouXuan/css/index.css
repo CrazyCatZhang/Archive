@@ -139,6 +139,15 @@
 }
 #wrapper #content .contentMain #center {
   margin: 5px 0 15px;
+  *zoom: 1;
+}
+#wrapper #content .contentMain #center::before,
+#wrapper #content .contentMain #center::after {
+  content: "";
+  display: table;
+}
+#wrapper #content .contentMain #center:after {
+  clear: both;
 }
 #wrapper #content .contentMain #center #left {
   width: 400px;
@@ -454,5 +463,40 @@
   color: #fff;
   border: none;
   float: left;
+}
+#wrapper #content .contentMain .goodsDetailWrap {
+  width: 1200px;
+  margin: 30px auto 0;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside {
+  width: 210px;
+  border: 1px solid #ccc;
+  *zoom: 1;
+  height: 1000px;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside::before,
+#wrapper #content .contentMain .goodsDetailWrap .leftAside::after {
+  content: "";
+  display: table;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside:after {
+  clear: both;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideTop h4 {
+  width: 105px;
+  height: 40px;
+  background: #fff;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+  border-top: 3px solid #fff;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideTop h4.active {
+  border-top: 3px solid #e1251b;
+  border-bottom: none;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideContent {
+  padding: 10px;
 }
 /*# sourceMappingURL=index.css.map */

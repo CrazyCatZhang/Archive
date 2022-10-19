@@ -156,6 +156,7 @@
 
             #center {
                 margin: 5px 0 15px;
+                .clearfix();
 
                 #left {
                     width: 400px;
@@ -481,6 +482,45 @@
                                 border: none;
                                 float: left;
                             }
+                        }
+                    }
+                }
+            }
+
+            .goodsDetailWrap {
+                width: 1200px;
+                margin: 30px auto 0;
+                //左边的侧边栏
+                .leftAside {
+                    width: 210px;
+                    border: 1px solid #ccc;
+                    .clearfix();
+                    height: 1000px;
+                    //上边
+                    .asideTop {
+                        h4 {
+                            width: 105px;
+                            height: 40px;
+                            background: #fff;
+                            float: left;
+                            text-align: center;
+                            line-height: 40px;
+                            border-bottom: 1px solid #ccc;
+                            border-top: 3px solid #fff;
+
+                            &.active {
+                                border-top: 3px solid #e1251b;
+                                border-bottom: none;
+                            }
+                        }
+                    }
+
+                    //下边
+                    .asideContent {
+                        padding: 10px;
+
+                        div {
+
                         }
                     }
                 }
