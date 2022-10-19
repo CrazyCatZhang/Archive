@@ -288,5 +288,42 @@ window.onload = function () {
         }
 
         oldPrice.innerText = price
+
+        const leftPrice = document.querySelector('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .left p')
+
+        leftPrice.innerText = '¥' + price
+
+        const ipts = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .middle li input')
+
+        const newPrice = document.querySelector('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .right i')
+
+        for (let j = 0; j < ipts.length; j++) {
+            if (ipts[j].checked) {
+                price += Number(ipts[j].value);
+            }
+        }
+
+        newPrice.innerText = '¥' + price;
     }
+
+    function choosePrice() {
+        const ipts = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .middle li input')
+        const leftPrice = document.querySelector('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .left p')
+        const newPrice = document.querySelector('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .right i')
+
+        for (let i = 0; i < ipts.length; i++) {
+            ipts[i].onclick = function () {
+                let oldPrice = Number(leftPrice.innerText.slice(1));
+                for (let j = 0; j < ipts.length; j++) {
+                    if (ipts[j].checked) {
+                        oldPrice = oldPrice + Number(ipts[j].value);
+                    }
+                }
+
+                newPrice.innerText = '¥' + oldPrice;
+            }
+        }
+    }
+
+    choosePrice()
 }
