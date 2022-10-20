@@ -357,4 +357,29 @@ window.onload = function () {
     }
 
     rightTab()
+
+    function rightAsideBind() {
+        const btns = document.querySelector('#wrapper .rightAside .btns')
+
+        let flag = true
+
+        const rightAside = document.querySelector('#wrapper .rightAside')
+
+        btns.onclick = function () {
+            if (flag) {
+                btns.className = "btns btnsOpen"
+
+                rightAside.className = "rightAside asideOpen"
+
+            } else {
+                btns.className = "btns btnsClose"
+
+                rightAside.className = "rightAside asideClose"
+            }
+
+            flag = !flag
+        }
+    }
+
+    rightAsideBind()
 }
