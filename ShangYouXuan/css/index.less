@@ -523,7 +523,11 @@
                         padding: 10px;
 
                         div {
+                            display: none;
+
                             &.active {
+                                display: block;
+                                
                                 ul {
                                     &.goodslist1 {
                                         li {
@@ -697,7 +701,7 @@
                             li {
                                 border-top: 1px solid #ddd;
                                 border-bottom: 1px solid #ddd;
-                                border-right: 1px solid #ddd;
+                                border-left: 1px solid #ddd;
                                 background: #fff;
                                 height: 40px;
                                 padding-left: 11px;
@@ -708,11 +712,14 @@
 
                                 &.active {
                                     background: red;
-                                    border-left: 1px solid #ddd;
 
                                     a {
                                         color: #fff;
                                     }
+                                }
+
+                                &:last-child {
+                                    border-right: 1px solid #ddd;
                                 }
                             }
                         }

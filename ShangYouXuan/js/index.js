@@ -326,4 +326,36 @@ window.onload = function () {
     }
 
     choosePrice()
+
+
+    function TAB(tabBtns, tabConts) {
+        for (let i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].addEventListener('click', function () {
+                for (let j = 0; j < tabBtns.length; j++) {
+                    tabBtns[j].className = ''
+                    tabConts[j].className = ''
+                }
+                this.className = 'active'
+                tabConts[i].className = 'active'
+            })
+        }
+    }
+
+    function leftTab() {
+        const h4s = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideTop h4')
+        const divs = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideContent>div')
+        console.log(h4s)
+        TAB(h4s, divs)
+    }
+
+    leftTab()
+
+    function rightTab() {
+        const lis = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .BottomDetail .tabBtns li')
+        const divs = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .BottomDetail .tabContents div')
+
+        TAB(lis, divs)
+    }
+
+    rightTab()
 }
