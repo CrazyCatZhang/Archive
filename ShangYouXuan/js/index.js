@@ -344,7 +344,6 @@ window.onload = function () {
     function leftTab() {
         const h4s = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideTop h4')
         const divs = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideContent>div')
-        console.log(h4s)
         TAB(h4s, divs)
     }
 

@@ -527,7 +527,7 @@
 
                             &.active {
                                 display: block;
-                                
+
                                 ul {
                                     &.goodslist1 {
                                         li {
@@ -739,6 +739,34 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .rightAside {
+        width: 300px;
+        height: 100%;
+        background: #7a6e6e;
+        transition: 0.5s;
+        position: fixed;
+        top: 0px;
+
+        &.asideClose {
+            right: -294px;
+        }
+
+        //按钮区域
+        .btns {
+            width: 35px;
+            height: 35px;
+            background: #7a6e6e;
+            border-radius: 5px 0 0 5px;
+            left: -29px;
+            background-size: 35px 35px;
+            position: absolute;
+
+            &.btnsClose {
+                background-image: url('../assets/list.png');
             }
         }
     }
