@@ -29,7 +29,7 @@ class HandFrame extends JFrame {
 class HandController extends JPanel {
 
     private boolean pressed = false;
-    private final List<Point> points = new ArrayList<>();
+    private final List<Curve> curveList = new ArrayList<>();
 
     public HandController() {
         MyMouseListener myMouseListener = new MyMouseListener();
@@ -40,20 +40,22 @@ class HandController extends JPanel {
     private class MyMouseListener extends MouseAdapter {
         @Override
         public void mousePressed(MouseEvent e) {
-            points.add(e.getPoint());
+            Curve curve = new Curve();
+            curveList.add(curve);
+            curve.points.add(e.getPoint());
             pressed = true;
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
-            points.clear();
             pressed = false;
         }
 
         @Override
         public void mouseDragged(MouseEvent e) {
             if (pressed) {
-                points.add(e.getPoint());
+                Curve curve = curveList.get(curveList.size() - 1);
+                curve.points.add(e.getPoint());
                 repaint();
             }
         }
@@ -72,13 +74,20 @@ class HandController extends JPanel {
         g.setColor(new Color(0x555555));
         g.drawRect(0, 0, width - 1, height - 1);
 
-        if (points.size() >= 2) {
-            Point point1 = points.get(0);
-            for (int i = 1; i < points.size(); i++) {
-                Point point2 = points.get(i);
-                g.drawLine(point1.x, point1.y, point2.x, point2.y);
-                point1 = point2;
+        curveList.forEach(curve -> {
+            List<Point> points = curve.points;
+            if (points.size() >= 2) {
+                Point point1 = points.get(0);
+                for (int i = 1; i < points.size(); i++) {
+                    Point point2 = points.get(i);
+                    g.drawLine(point1.x, point1.y, point2.x, point2.y);
+                    point1 = point2;
+                }
             }
-        }
+        });
+    }
+
+    public static class Curve {
+        public final List<Point> points = new ArrayList<>();
     }
 }
