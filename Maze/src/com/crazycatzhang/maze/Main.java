@@ -1,7 +1,7 @@
-package Main;
+package com.crazycatzhang.maze;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        new DrawMaze();
     }
 }
