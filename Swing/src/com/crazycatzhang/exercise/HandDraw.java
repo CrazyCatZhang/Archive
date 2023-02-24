@@ -1,9 +1,14 @@
 package com.crazycatzhang.exercise;
 
+import com.crazycatzhang.encapsulation.Util;
+
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,11 +23,36 @@ public class HandDraw {
 }
 
 class HandFrame extends JFrame {
+
+    JButton saveButton = new JButton("Save");
+    HandController handController = new HandController();
+
     public HandFrame(String title) throws HeadlessException {
         super(title);
 
-        HandController handController = new HandController();
-        this.setContentPane(handController);
+        JPanel root = new JPanel();
+        this.setContentPane(root);
+        root.setLayout(new BorderLayout());
+
+        JPanel topPanel = new JPanel();
+        root.add(topPanel, BorderLayout.NORTH);
+        root.add(handController, BorderLayout.CENTER);
+
+        topPanel.add(saveButton);
+        saveButton.addActionListener(e -> {
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("图片文件", "jpg");
+            chooser.setFileFilter(filter);
+            int result = chooser.showSaveDialog(this);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File file = chooser.getSelectedFile();
+                try {
+                    Util.snapshot(handController, file);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
 }
 
