@@ -1,10 +1,11 @@
 package com.crazycatzhang.maze;
 
-import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-public class MazeBlock extends JPanel {
+public class MazeBlock {
     private final MazePanel panel;
 
     //offset for the Controller
@@ -30,6 +31,8 @@ public class MazeBlock extends JPanel {
     private int y4 = 0;
 
     boolean[] walls = new boolean[4];
+
+    private boolean visited = false;
 
     public MazeBlock(int i, int j, int length, MazePanel panel) {
         this.i = i;
@@ -83,5 +86,69 @@ public class MazeBlock extends JPanel {
         }
     }
 
+    public MazeBlock getNeighborByDirection(int direction) {
+        MazeBlock neighbor;
+        int neighborI = 0, neighborJ = 0;
+        if (direction == 0) {
+            neighborI = this.i - 1;
+            neighborJ = this.j;
+        } else if (direction == 1) {
+            neighborI = this.i;
+            neighborJ = this.j + 1;
+        } else if (direction == 2) {
+            neighborI = this.i + 1;
+            neighborJ = this.j;
+        } else if (direction == 3) {
+            neighborI = this.i;
+            neighborJ = this.j - 1;
+        }
 
+        MazeBlock[][] blocks = panel.blocks;
+
+        if (neighborI < 0 || neighborJ < 0 || neighborI >= panel.ROWS || neighborJ >= panel.COLS) {
+            neighbor = null;
+        } else {
+            neighbor = blocks[neighborI][neighborJ];
+            if (neighbor.visited) {
+                neighbor = null;
+            }
+        }
+
+        return neighbor;
+    }
+
+    public List<MazeBlock> getAllNeighbors() {
+        List<MazeBlock> neighbors = new ArrayList<>();
+        MazeBlock topNeighbor = this.getNeighborByDirection(0);
+        MazeBlock rightNeighbor = this.getNeighborByDirection(1);
+        MazeBlock bottomNeighbor = this.getNeighborByDirection(2);
+        MazeBlock leftNeighbor = this.getNeighborByDirection(3);
+
+        if (topNeighbor != null) {
+            neighbors.add(topNeighbor);
+        }
+        if (rightNeighbor != null) {
+            neighbors.add(rightNeighbor);
+        }
+        if (bottomNeighbor != null) {
+            neighbors.add(bottomNeighbor);
+        }
+        if (leftNeighbor != null) {
+            neighbors.add(leftNeighbor);
+        }
+
+        return neighbors;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public int getI() {
+        return i;
+    }
+
+    public int getJ() {
+        return j;
+    }
 }
