@@ -86,7 +86,7 @@ public class MazeBlock {
         }
     }
 
-    public MazeBlock getNeighborByDirection(int direction) {
+    public MazeBlock getNeighborByDirection(int direction, boolean isIgnore) {
         MazeBlock neighbor;
         int neighborI = 0, neighborJ = 0;
         if (direction == 0) {
@@ -109,7 +109,7 @@ public class MazeBlock {
             neighbor = null;
         } else {
             neighbor = blocks[neighborI][neighborJ];
-            if (neighbor.visited) {
+            if (neighbor.visited && !isIgnore) {
                 neighbor = null;
             }
         }
@@ -119,10 +119,10 @@ public class MazeBlock {
 
     public List<MazeBlock> getAllNeighbors() {
         List<MazeBlock> neighbors = new ArrayList<>();
-        MazeBlock topNeighbor = this.getNeighborByDirection(0);
-        MazeBlock rightNeighbor = this.getNeighborByDirection(1);
-        MazeBlock bottomNeighbor = this.getNeighborByDirection(2);
-        MazeBlock leftNeighbor = this.getNeighborByDirection(3);
+        MazeBlock topNeighbor = this.getNeighborByDirection(0, false);
+        MazeBlock rightNeighbor = this.getNeighborByDirection(1, false);
+        MazeBlock bottomNeighbor = this.getNeighborByDirection(2, false);
+        MazeBlock leftNeighbor = this.getNeighborByDirection(3, false);
 
         if (topNeighbor != null) {
             neighbors.add(topNeighbor);

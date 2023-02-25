@@ -18,7 +18,6 @@ public class MazeMouse {
         this.length = length;
         this.type = type;
         this.panel = panel;
-        init();
     }
 
     public void init() {
@@ -27,6 +26,7 @@ public class MazeMouse {
     }
 
     public void draw(Graphics g) {
+        init();
         if ("start".equals(type)) {
             g.setColor(Color.ORANGE);
         } else {
@@ -35,5 +35,35 @@ public class MazeMouse {
         g.fillOval(x, y, length - 3, length - 3);
     }
 
+    public void move(int direction) {
+        MazeBlock currentBlock = panel.blocks[i][j];
+        boolean wall = currentBlock.walls[direction];
+        if (!wall) {
+            MazeBlock nextBlock = currentBlock.getNeighborByDirection(direction, true);
+            if (nextBlock != null) {
+                i = nextBlock.getI();
+                j = nextBlock.getJ();
+                panel.repaint();
+                if (i == MazePanel.end.i && j == MazePanel.end.j) {
+                    System.out.println("You Are Win");
+                }
+            }
+        }
+    }
 
+    public int getI() {
+        return i;
+    }
+
+    public void setI(int i) {
+        this.i = i;
+    }
+
+    public int getJ() {
+        return j;
+    }
+
+    public void setJ(int j) {
+        this.j = j;
+    }
 }

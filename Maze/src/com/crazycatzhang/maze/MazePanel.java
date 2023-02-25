@@ -2,6 +2,8 @@ package com.crazycatzhang.maze;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.List;
@@ -12,12 +14,14 @@ public class MazePanel extends JPanel {
     public final int ROWS = 72;
     public final int COLS = 70;
     private final int LENGTH = 10;
+    private MazeFrame mazeFrame;
     public MazeBlock[][] blocks = null;
-    public MazeMouse start = null;
-    public MazeMouse end = null;
+    public static MazeMouse start = null;
+    public static MazeMouse end = null;
 
-    public MazePanel() {
+    public MazePanel(MazeFrame mazeFrame) {
         this.setLayout(null);
+        this.mazeFrame = mazeFrame;
         creatBlocks();
         try {
             generateMaze();
@@ -25,6 +29,38 @@ public class MazePanel extends JPanel {
             throw new RuntimeException(e);
         }
         createMazeMouse();
+        mazeFrame.addKeyListener(new MyKeyListener());
+    }
+
+    private static class MyKeyListener extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {
+            super.keyPressed(e);
+
+            int keyCode = e.getKeyCode();
+            switch (keyCode) {
+                case KeyEvent.VK_UP -> {
+                    if (start != null) {
+                        start.move(0);
+                    }
+                }
+                case KeyEvent.VK_RIGHT -> {
+                    if (start != null) {
+                        start.move(1);
+                    }
+                }
+                case KeyEvent.VK_DOWN -> {
+                    if (start != null) {
+                        start.move(2);
+                    }
+                }
+                case KeyEvent.VK_LEFT -> {
+                    if (start != null) {
+                        start.move(3);
+                    }
+                }
+            }
+        }
     }
 
     @Override

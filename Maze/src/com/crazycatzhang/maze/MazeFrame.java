@@ -7,7 +7,7 @@ public class MazeFrame extends JFrame {
     public MazeFrame(String title) throws HeadlessException {
         super(title);
 
-        JPanel root = new MazePanel();
+        JPanel root = new MazePanel(this);
         this.setContentPane(root);
     }
 }
