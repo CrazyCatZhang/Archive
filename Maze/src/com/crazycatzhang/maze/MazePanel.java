@@ -13,6 +13,8 @@ public class MazePanel extends JPanel {
     public final int COLS = 70;
     private final int LENGTH = 10;
     public MazeBlock[][] blocks = null;
+    public MazeMouse start = null;
+    public MazeMouse end = null;
 
     public MazePanel() {
         this.setLayout(null);
@@ -22,12 +24,14 @@ public class MazePanel extends JPanel {
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
+        createMazeMouse();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         drawBlocks(g);
+        drawMazeMouse(g);
     }
 
     private Font createFont() {
@@ -49,6 +53,16 @@ public class MazePanel extends JPanel {
                 blocks[i][j].drawBlock(g);
             }
         }
+    }
+
+    public void createMazeMouse() {
+        start = new MazeMouse(0, 0, LENGTH, "start", this);
+        end = new MazeMouse(ROWS - 1, COLS - 1, LENGTH, "end", this);
+    }
+
+    public void drawMazeMouse(Graphics g) {
+        start.draw(g);
+        end.draw(g);
     }
 
     public void generateMaze() throws NoSuchAlgorithmException {
