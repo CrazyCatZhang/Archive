@@ -19,9 +19,9 @@ public class MazePanel extends JPanel {
     public static MazeMouse start = null;
     public static MazeMouse end = null;
 
-    public MazePanel(MazeFrame mazeFrame) {
+    public MazePanel() {
         this.setLayout(null);
-        this.mazeFrame = mazeFrame;
+        this.setFocusable(true);
         creatBlocks();
         try {
             generateMaze();
@@ -29,7 +29,7 @@ public class MazePanel extends JPanel {
             throw new RuntimeException(e);
         }
         createMazeMouse();
-        mazeFrame.addKeyListener(new MyKeyListener());
+        this.addKeyListener(new MyKeyListener());
     }
 
     private static class MyKeyListener extends KeyAdapter {
