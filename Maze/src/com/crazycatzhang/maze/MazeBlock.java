@@ -144,11 +144,27 @@ public class MazeBlock {
         this.visited = visited;
     }
 
+    public boolean isVisited() {
+        return visited;
+    }
+
     public int getI() {
         return i;
     }
 
     public int getJ() {
         return j;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getX1() {
+        return x1;
+    }
+
+    public int getY1() {
+        return y1;
     }
 }

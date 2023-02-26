@@ -18,6 +18,8 @@ public class MazePanel extends JPanel {
     public MazeBlock[][] blocks = null;
     public static MazeMouse start = null;
     public static MazeMouse end = null;
+    public Path path = null;
+    public List<MazeBlock> paths = null;
 
     public MazePanel() {
         this.setLayout(null);
@@ -30,6 +32,7 @@ public class MazePanel extends JPanel {
         }
         createMazeMouse();
         this.addKeyListener(new MyKeyListener());
+        createPath();
     }
 
     private static class MyKeyListener extends KeyAdapter {
@@ -68,10 +71,7 @@ public class MazePanel extends JPanel {
         super.paintComponent(g);
         drawBlocks(g);
         drawMazeMouse(g);
-    }
-
-    private Font createFont() {
-        return new Font("微软雅黑", Font.BOLD, 18);
+        drawPaths(g);
     }
 
     public void creatBlocks() {
@@ -99,6 +99,16 @@ public class MazePanel extends JPanel {
     public void drawMazeMouse(Graphics g) {
         start.draw(g);
         end.draw(g);
+    }
+
+    public void createPath() {
+        path = new Path(this);
+        path.dfs(0, 0, 1);
+        this.paths = path.paths;
+    }
+
+    public void drawPaths(Graphics g) {
+        path.drawPath(g);
     }
 
     public void generateMaze() throws NoSuchAlgorithmException {
