@@ -2,20 +2,24 @@ package com.crazycatzhang.maze;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
 public class Path {
-    public List<MazeBlock> paths = null;
-    public MazePanel panel = null;
+    public List<MazeBlock> paths;
+    public MazePanel panel;
     Stack<MazeBlock> stack = new Stack<>();
+    LinkedList<MazeBlock> queue = new LinkedList<>();
     public int shortestPathCount = Integer.MAX_VALUE;
     public MazeBlock[][] blocks;
+    public MazeBlock[][] parentBlocks;
 
     public Path(MazePanel panel) {
         this.panel = panel;
         this.paths = new ArrayList<>();
         this.blocks = panel.blocks;
+        this.parentBlocks = new MazeBlock[panel.ROWS][panel.COLS];
         init();
     }
 
@@ -74,6 +78,46 @@ public class Path {
     }
 
     public void bfs() {
+        MazeBlock current = blocks[0][0];
+        queue.offer(current);
+        int i, j;
+        while (!queue.isEmpty()) {
+            current = queue.poll();
+            i = current.getI();
+            j = current.getJ();
+            if (i == panel.ROWS - 1 && j == panel.COLS - 1) {
+                while (current.getI() != 0 || current.getJ() != 0) {
+                    current = parentBlocks[current.getI()][current.getJ()];
+                    paths.add(current);
+                }
+                return;
+            } else {
+                //Right
+                if (isNotHasWall(current, 1) && !blocks[i][j + 1].isVisited()) {
+                    queue.offer(blocks[i][j + 1]);
+                    blocks[i][j + 1].setVisited(true);
+                    parentBlocks[i][j + 1] = current;
+                }
+                //Bottom
+                if (isNotHasWall(current, 2) && !blocks[i + 1][j].isVisited()) {
+                    queue.offer(blocks[i + 1][j]);
+                    blocks[i + 1][j].setVisited(true);
+                    parentBlocks[i + 1][j] = current;
+                }
+                //Left
+                if (isNotHasWall(current, 3) && !blocks[i][j - 1].isVisited()) {
+                    queue.offer(blocks[i][j - 1]);
+                    blocks[i][j - 1].setVisited(true);
+                    parentBlocks[i][j - 1] = current;
+                }
+                //Top
+                if (isNotHasWall(current, 0) && !blocks[i - 1][j].isVisited()) {
+                    queue.offer(blocks[i - 1][j]);
+                    blocks[i - 1][j].setVisited(true);
+                    parentBlocks[i - 1][j] = current;
+                }
+            }
+        }
 
     }
 
