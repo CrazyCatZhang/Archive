@@ -11,15 +11,14 @@ import java.util.Stack;
 
 public class MazePanel extends JPanel {
 
-    public final int ROWS = 72;
-    public final int COLS = 70;
-    private final int LENGTH = 10;
+    public final int ROWS = 10;
+    public final int COLS = 10;
+    private final int LENGTH = 70;
     private MazeFrame mazeFrame;
     public MazeBlock[][] blocks = null;
     public static MazeMouse start = null;
     public static MazeMouse end = null;
     public Path path = null;
-    public List<MazeBlock> paths = null;
 
     public MazePanel() {
         this.setLayout(null);
@@ -103,8 +102,7 @@ public class MazePanel extends JPanel {
 
     public void createPath() {
         path = new Path(this);
-        path.bfs();
-        this.paths = path.paths;
+        path.dfs(0, 0, 1);
     }
 
     public void drawPaths(Graphics g) {

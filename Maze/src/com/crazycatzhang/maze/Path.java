@@ -14,6 +14,12 @@ public class Path {
     public int shortestPathCount = Integer.MAX_VALUE;
     public MazeBlock[][] blocks;
     public MazeBlock[][] parentBlocks;
+    public int[][] directionsArray = {
+            {0, 1},
+            {1, 0},
+            {0, -1},
+            {-1, 0}
+    };
 
     public Path(MazePanel panel) {
         this.panel = panel;
@@ -34,6 +40,7 @@ public class Path {
 
     public void dfs(int i, int j, int step) {
         MazeBlock current = panel.blocks[i][j];
+        int ti, tj;
 
         if (i == panel.ROWS - 1 && j == panel.COLS - 1) {
             if (step < shortestPathCount) {
@@ -43,44 +50,25 @@ public class Path {
             }
             return;
         }
-        //Right
-        if (isNotHasWall(current, 1) && !blocks[i][j + 1].isVisited()) {
-            stack.push(blocks[i][j + 1]);
-            blocks[i][j + 1].setVisited(true);
-            dfs(i, j + 1, step + 1);
-            blocks[i][j + 1].setVisited(false);
-            stack.pop();
-        }
-        //Bottom
-        if (isNotHasWall(current, 2) && !blocks[i + 1][j].isVisited()) {
-            stack.push(blocks[i + 1][j]);
-            blocks[i + 1][j].setVisited(true);
-            dfs(i + 1, j, step + 1);
-            blocks[i + 1][j].setVisited(false);
-            stack.pop();
-        }
-        //Left
-        if (isNotHasWall(current, 3) && !blocks[i][j - 1].isVisited()) {
-            stack.push(blocks[i][j - 1]);
-            blocks[i][j - 1].setVisited(true);
-            dfs(i, j - 1, step + 1);
-            blocks[i][j - 1].setVisited(false);
-            stack.pop();
-        }
-        //Top
-        if (isNotHasWall(current, 0) && !blocks[i - 1][j].isVisited()) {
-            stack.push(blocks[i - 1][j]);
-            blocks[i - 1][j].setVisited(true);
-            dfs(i - 1, j, step + 1);
-            blocks[i - 1][j].setVisited(false);
-            stack.pop();
+
+        for (int k = 0; k < 4; k++) {
+            int direction = (k + 1) % 4;
+            ti = directionsArray[k][0] + i;
+            tj = directionsArray[k][1] + j;
+            if (isNotHasWall(current, direction) && !blocks[ti][tj].isVisited()) {
+                stack.push(blocks[ti][tj]);
+                blocks[ti][tj].setVisited(true);
+                dfs(ti, tj, step + 1);
+                blocks[ti][tj].setVisited(false);
+                stack.pop();
+            }
         }
     }
 
     public void bfs() {
         MazeBlock current = blocks[0][0];
         queue.offer(current);
-        int i, j;
+        int i, j, ti, tj;
         while (!queue.isEmpty()) {
             current = queue.poll();
             i = current.getI();
@@ -92,33 +80,18 @@ public class Path {
                 }
                 return;
             } else {
-                //Right
-                if (isNotHasWall(current, 1) && !blocks[i][j + 1].isVisited()) {
-                    queue.offer(blocks[i][j + 1]);
-                    blocks[i][j + 1].setVisited(true);
-                    parentBlocks[i][j + 1] = current;
-                }
-                //Bottom
-                if (isNotHasWall(current, 2) && !blocks[i + 1][j].isVisited()) {
-                    queue.offer(blocks[i + 1][j]);
-                    blocks[i + 1][j].setVisited(true);
-                    parentBlocks[i + 1][j] = current;
-                }
-                //Left
-                if (isNotHasWall(current, 3) && !blocks[i][j - 1].isVisited()) {
-                    queue.offer(blocks[i][j - 1]);
-                    blocks[i][j - 1].setVisited(true);
-                    parentBlocks[i][j - 1] = current;
-                }
-                //Top
-                if (isNotHasWall(current, 0) && !blocks[i - 1][j].isVisited()) {
-                    queue.offer(blocks[i - 1][j]);
-                    blocks[i - 1][j].setVisited(true);
-                    parentBlocks[i - 1][j] = current;
+                for (int k = 0; k < 4; k++) {
+                    int direction = (k + 1) % 4;
+                    ti = directionsArray[k][0] + i;
+                    tj = directionsArray[k][1] + j;
+                    if (isNotHasWall(current, direction) && !blocks[ti][tj].isVisited()) {
+                        queue.offer(blocks[ti][tj]);
+                        blocks[ti][tj].setVisited(true);
+                        parentBlocks[ti][tj] = current;
+                    }
                 }
             }
         }
-
     }
 
     public boolean isNotHasWall(MazeBlock block, int direction) {
