@@ -10,8 +10,6 @@ public class MazeBlock {
 
     //offset for the Controller
     private final int offset = 10;
-
-    //Array Index
     private int i = 0;
     private int j = 0;
 
@@ -30,9 +28,15 @@ public class MazeBlock {
     private int x4 = 0;
     private int y4 = 0;
 
+    public int gCost = 0;
+    public int hCost = 0;
+    public int FCost = 0;
+
     boolean[] walls = new boolean[4];
 
     private boolean visited = false;
+
+    public MazeBlock connection = null;
 
     public MazeBlock(int i, int j, int length, MazePanel panel) {
         this.i = i;
@@ -62,6 +66,14 @@ public class MazeBlock {
 
         //Four sides are set as walls
         Arrays.fill(walls, true);
+
+        this.hCost = heuristic();
+    }
+
+    public int heuristic() {
+        int dx = Math.abs(panel.ROWS - 1 - i);
+        int dy = Math.abs(panel.COLS - 1 - j);
+        return dx + dy;
     }
 
     public void drawBlock(Graphics g) {
@@ -140,6 +152,29 @@ public class MazeBlock {
         return neighbors;
     }
 
+    public List<MazeBlock> getAllNeighborsWithoutWalls() {
+        List<MazeBlock> neighbors = new ArrayList<>();
+        MazeBlock topNeighbor = this.getNeighborByDirection(0, false);
+        MazeBlock rightNeighbor = this.getNeighborByDirection(1, false);
+        MazeBlock bottomNeighbor = this.getNeighborByDirection(2, false);
+        MazeBlock leftNeighbor = this.getNeighborByDirection(3, false);
+
+        if (topNeighbor != null && !this.walls[0]) {
+            neighbors.add(topNeighbor);
+        }
+        if (rightNeighbor != null && !this.walls[1]) {
+            neighbors.add(rightNeighbor);
+        }
+        if (bottomNeighbor != null && !this.walls[2]) {
+            neighbors.add(bottomNeighbor);
+        }
+        if (leftNeighbor != null && !this.walls[3]) {
+            neighbors.add(leftNeighbor);
+        }
+
+        return neighbors;
+    }
+
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
@@ -166,5 +201,29 @@ public class MazeBlock {
 
     public int getY1() {
         return y1;
+    }
+
+    public int getFCost() {
+        return gCost + hCost;
+    }
+
+    public void setFCost(int fCost) {
+        this.FCost = fCost;
+    }
+
+    public void setGCost(int gCost) {
+        this.gCost = gCost;
+    }
+
+    public int getGCost() {
+        return gCost;
+    }
+
+    public MazeBlock getConnection() {
+        return connection;
+    }
+
+    public void setConnection(MazeBlock connection) {
+        this.connection = connection;
     }
 }

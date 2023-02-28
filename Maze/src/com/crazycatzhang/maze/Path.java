@@ -1,10 +1,9 @@
 package com.crazycatzhang.maze;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
+import java.util.Queue;
+import java.util.*;
 
 public class Path {
     public List<MazeBlock> paths;
@@ -88,6 +87,43 @@ public class Path {
                         queue.offer(blocks[ti][tj]);
                         blocks[ti][tj].setVisited(true);
                         parentBlocks[ti][tj] = current;
+                    }
+                }
+            }
+        }
+    }
+
+    public void A_Search() {
+        PriorityQueue<MazeBlock> frontier = new PriorityQueue<>(Comparator.comparingInt(MazeBlock::getFCost));
+        Queue<MazeBlock> processed = new LinkedList<>();
+        blocks[0][0].setFCost(0);
+        frontier.add(blocks[0][0]);
+
+        while (!frontier.isEmpty()) {
+            MazeBlock current = frontier.poll();
+            processed.add(current);
+
+            if (current == blocks[panel.ROWS - 1][panel.COLS - 1]) {
+                MazeBlock currentPathTile = current;
+                while (currentPathTile != blocks[0][0]) {
+                    paths.add(currentPathTile);
+                    currentPathTile = currentPathTile.getConnection();
+                }
+                return;
+            }
+
+            List<MazeBlock> neighbors = current.getAllNeighborsWithoutWalls();
+            for (MazeBlock neighbor : neighbors) {
+                if (!processed.contains(neighbor)) {
+                    boolean inSearch = frontier.contains(neighbor);
+                    int costToNeighbor = current.getGCost() + 1;
+                    if (!inSearch || costToNeighbor < neighbor.getGCost()) {
+                        neighbor.setGCost(costToNeighbor);
+                        neighbor.setConnection(current);
+
+                        if (!inSearch) {
+                            frontier.add(neighbor);
+                        }
                     }
                 }
             }

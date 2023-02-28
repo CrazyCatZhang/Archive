@@ -102,7 +102,7 @@ public class MazePanel extends JPanel {
 
     public void createPath() {
         path = new Path(this);
-        path.dfs(0, 0, 1);
+        path.A_Search();
     }
 
     public void drawPaths(Graphics g) {
