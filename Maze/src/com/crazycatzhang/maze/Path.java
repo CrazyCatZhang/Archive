@@ -72,10 +72,11 @@ public class Path {
             current = queue.poll();
             i = current.getI();
             j = current.getJ();
-            if (i == panel.ROWS - 1 && j == panel.COLS - 1) {
-                while (current.getI() != 0 || current.getJ() != 0) {
-                    current = parentBlocks[current.getI()][current.getJ()];
-                    paths.add(current);
+            if (current == blocks[panel.ROWS - 1][panel.COLS - 1]) {
+                MazeBlock currentPathTile = current;
+                while (currentPathTile != blocks[0][0]) {
+                    paths.add(currentPathTile);
+                    currentPathTile = currentPathTile.getConnection();
                 }
                 return;
             } else {
@@ -87,6 +88,7 @@ public class Path {
                         queue.offer(blocks[ti][tj]);
                         blocks[ti][tj].setVisited(true);
                         parentBlocks[ti][tj] = current;
+                        blocks[ti][tj].setConnection(current);
                     }
                 }
             }
