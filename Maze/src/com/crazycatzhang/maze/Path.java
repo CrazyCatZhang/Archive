@@ -87,7 +87,6 @@ public class Path {
                     if (isNotHasWall(current, direction) && !blocks[ti][tj].isVisited()) {
                         queue.offer(blocks[ti][tj]);
                         blocks[ti][tj].setVisited(true);
-                        parentBlocks[ti][tj] = current;
                         blocks[ti][tj].setConnection(current);
                     }
                 }
