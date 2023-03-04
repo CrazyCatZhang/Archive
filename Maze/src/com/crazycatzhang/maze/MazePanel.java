@@ -6,14 +6,15 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
 public class MazePanel extends JPanel {
 
-    public final int ROWS = 10;
-    public final int COLS = 10;
-    private final int LENGTH = 70;
+    public final int ROWS = 70;
+    public final int COLS = 70;
+    private final int LENGTH = 10;
     public MazeBlock[][] blocks = null;
     public static MazeMouse start = null;
     public static MazeMouse end = null;
@@ -24,13 +25,14 @@ public class MazePanel extends JPanel {
         this.setFocusable(true);
         creatBlocks();
         try {
-            generateMaze();
+//            generateMazeByDFS();
+            generateMazeByPrim();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
         createMazeMouse();
         this.addKeyListener(new MyKeyListener());
-//        createPath();
+        createPath();
     }
 
     private static class MyKeyListener extends KeyAdapter {
@@ -69,7 +71,7 @@ public class MazePanel extends JPanel {
         super.paintComponent(g);
         drawBlocks(g);
         drawMazeMouse(g);
-//        drawPaths(g);
+        drawPaths(g);
     }
 
     public void creatBlocks() {
@@ -108,7 +110,7 @@ public class MazePanel extends JPanel {
         path.drawPath(g);
     }
 
-    public void generateMaze() throws NoSuchAlgorithmException {
+    public void generateMazeByDFS() throws NoSuchAlgorithmException {
         SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
         Stack<MazeBlock> stack = new Stack<>();
         MazeBlock currentBlock = blocks[0][0];
@@ -129,6 +131,30 @@ public class MazePanel extends JPanel {
                 MazeBlock cell = stack.pop();
                 currentBlock = cell;
             }
+        }
+        repaint();
+    }
+
+    public void generateMazeByPrim() throws NoSuchAlgorithmException {
+        SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+        MazeBlock currentBlock = blocks[0][0];
+        currentBlock.setVisited(true);
+        List<MazeBlock> neighbors = currentBlock.getAllNeighbors();
+        LinkedList<MazeBlock> wayPoints = new LinkedList<>(neighbors);
+        while (!wayPoints.isEmpty()) {
+            MazeBlock wayPoint = wayPoints.get(random.nextInt(wayPoints.size()));
+            List<MazeBlock> neighborsWithVisited = wayPoint.getAllNeighborsWithVisited();
+            List<MazeBlock> neighborsWithoutVisited = wayPoint.getAllNeighbors();
+            MazeBlock nextPoint = neighborsWithVisited.get(random.nextInt(neighborsWithVisited.size()));
+            wayPoint.setVisited(true);
+            removeWall(wayPoint, nextPoint);
+            repaint();
+            for (MazeBlock mazeBlock : neighborsWithoutVisited) {
+                if (!wayPoints.contains(mazeBlock)) {
+                    wayPoints.add(mazeBlock);
+                }
+            }
+            wayPoints.remove(wayPoint);
         }
         repaint();
     }

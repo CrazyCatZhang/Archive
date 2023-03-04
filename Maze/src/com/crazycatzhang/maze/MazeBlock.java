@@ -175,6 +175,28 @@ public class MazeBlock {
         return neighbors;
     }
 
+    public List<MazeBlock> getAllNeighborsWithVisited() {
+        List<MazeBlock> neighbors = new ArrayList<>();
+        MazeBlock topNeighbor = this.getNeighborByDirection(0, true);
+        MazeBlock rightNeighbor = this.getNeighborByDirection(1, true);
+        MazeBlock bottomNeighbor = this.getNeighborByDirection(2, true);
+        MazeBlock leftNeighbor = this.getNeighborByDirection(3, true);
+
+        if (topNeighbor != null && topNeighbor.isVisited()) {
+            neighbors.add(topNeighbor);
+        }
+        if (rightNeighbor != null && rightNeighbor.isVisited()) {
+            neighbors.add(rightNeighbor);
+        }
+        if (bottomNeighbor != null && bottomNeighbor.isVisited()) {
+            neighbors.add(bottomNeighbor);
+        }
+        if (leftNeighbor != null && leftNeighbor.isVisited()) {
+            neighbors.add(leftNeighbor);
+        }
+        return neighbors;
+    }
+
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
