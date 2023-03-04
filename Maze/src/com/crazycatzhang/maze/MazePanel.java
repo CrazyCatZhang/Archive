@@ -33,6 +33,7 @@ public class MazePanel extends JPanel {
         createMazeMouse();
         this.addKeyListener(new MyKeyListener());
         createPath();
+        this.add(new ControlPanel(this));
     }
 
     private static class MyKeyListener extends KeyAdapter {
