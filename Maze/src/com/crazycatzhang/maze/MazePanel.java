@@ -148,7 +148,6 @@ public class MazePanel extends JPanel {
             MazeBlock nextPoint = neighborsWithVisited.get(random.nextInt(neighborsWithVisited.size()));
             wayPoint.setVisited(true);
             removeWall(wayPoint, nextPoint);
-            repaint();
             for (MazeBlock mazeBlock : neighborsWithoutVisited) {
                 if (!wayPoints.contains(mazeBlock)) {
                     wayPoints.add(mazeBlock);
