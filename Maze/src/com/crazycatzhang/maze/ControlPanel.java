@@ -34,6 +34,7 @@ public class ControlPanel extends JPanel {
         dfsMaze.addActionListener(e -> {
             try {
                 panel.generateMazeByDFS();
+                panel.requestFocus();
             } catch (NoSuchAlgorithmException ex) {
                 throw new RuntimeException(ex);
             }
@@ -42,6 +43,7 @@ public class ControlPanel extends JPanel {
         primMaze.addActionListener(e -> {
             try {
                 panel.generateMazeByPrim();
+                panel.requestFocus();
             } catch (NoSuchAlgorithmException ex) {
                 throw new RuntimeException(ex);
             }
@@ -49,18 +51,22 @@ public class ControlPanel extends JPanel {
 
         clear.addActionListener(e -> {
             panel.clear();
+            panel.requestFocus();
         });
 
         dfs.addActionListener(e -> {
             panel.createPathWithDFS();
+            panel.requestFocus();
         });
 
         bfs.addActionListener(e -> {
             panel.createPathWithBFS();
+            panel.requestFocus();
         });
 
         aStar.addActionListener(e -> {
             panel.createPathWithAStar();
+            panel.requestFocus();
         });
     }
 }
