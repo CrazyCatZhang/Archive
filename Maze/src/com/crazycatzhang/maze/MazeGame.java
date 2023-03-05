@@ -2,8 +2,8 @@ package com.crazycatzhang.maze;
 
 import javax.swing.*;
 
-public class DrawMaze {
-    public DrawMaze() {
+public class MazeGame {
+    public MazeGame() {
         JFrame mazeFrame = new MazeFrame("Maze");
         mazeFrame.setSize(720, 780);
         mazeFrame.setLocationRelativeTo(null);
