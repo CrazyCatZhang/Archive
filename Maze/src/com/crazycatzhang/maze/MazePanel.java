@@ -24,15 +24,8 @@ public class MazePanel extends JPanel {
         this.setLayout(null);
         this.setFocusable(true);
         creatBlocks();
-        try {
-//            generateMazeByDFS();
-            generateMazeByPrim();
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
         createMazeMouse();
         this.addKeyListener(new MyKeyListener());
-        createPath();
         this.add(new ControlPanel(this));
     }
 
@@ -102,13 +95,11 @@ public class MazePanel extends JPanel {
         end.draw(g);
     }
 
-    public void createPath() {
-        path = new Path(this);
-        path.bfs();
-    }
 
     public void drawPaths(Graphics g) {
-        path.drawPath(g);
+        if (path != null) {
+            path.drawPath(g);
+        }
     }
 
     public void generateMazeByDFS() throws NoSuchAlgorithmException {
@@ -177,5 +168,45 @@ public class MazePanel extends JPanel {
                 nextBlock.walls[0] = false;
             }
         }
+    }
+
+    public void clear() {
+        path.paths.clear();
+        repaint();
+    }
+
+    public void createPathWithDFS() {
+        path = new Path(this);
+        path.dfs(0, 0, 1);
+        repaint();
+    }
+
+    public void createPathWithBFS() {
+        path = new Path(this);
+        path.bfs();
+        repaint();
+    }
+
+    public void createPathWithAStar() {
+        path = new Path(this);
+        path.A_Search();
+        repaint();
+    }
+
+    public void restart() {
+        MazeBlock block;
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                block = blocks[i][j];
+                if (block != null) {
+                    block.setVisited(false);
+                    block.walls[0] = true;
+                    block.walls[1] = true;
+                    block.walls[2] = true;
+                    block.walls[3] = true;
+                }
+            }
+        }
+        repaint();
     }
 }
