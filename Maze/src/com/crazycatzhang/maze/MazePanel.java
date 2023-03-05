@@ -209,6 +209,7 @@ public class MazePanel extends JPanel {
         }
         start.setI(0);
         start.setJ(0);
+        path.paths.clear();
         repaint();
     }
 }
