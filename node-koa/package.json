@@ -1,0 +1,10 @@
+{
+  "name": "node-koa",
+  "packageManager": "yarn@3.4.1",
+  "dependencies": {
+    "koa": "^2.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
