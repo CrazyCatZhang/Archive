@@ -10,6 +10,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * @author crazycatzhang
+ */
 public class MazePanel extends JPanel {
 
     public final int ROWS = 70;

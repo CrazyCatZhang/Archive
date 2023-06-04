@@ -4,6 +4,9 @@ import java.awt.*;
 import java.util.List;
 import java.util.*;
 
+/**
+ * @author crazycatzhang
+ */
 public class MazeBlock {
     private final MazePanel panel;
 

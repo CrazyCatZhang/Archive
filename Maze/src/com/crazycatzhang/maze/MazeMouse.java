@@ -2,6 +2,9 @@ package com.crazycatzhang.maze;
 
 import java.awt.*;
 
+/**
+ * @author crazycatzhang
+ */
 public class MazeMouse {
     private int i = 0;
     private int j = 0;

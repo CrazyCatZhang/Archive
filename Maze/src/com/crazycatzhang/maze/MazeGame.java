@@ -2,6 +2,9 @@ package com.crazycatzhang.maze;
 
 import javax.swing.*;
 
+/**
+ * @author crazycatzhang
+ */
 public class MazeGame {
     public MazeGame() {
         JFrame mazeFrame = new MazeFrame("Maze");

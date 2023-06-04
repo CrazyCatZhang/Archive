@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Queue;
 import java.util.*;
 
+/**
+ * @author crazycatzhang
+ */
 public class Path {
     public List<MazeBlock> paths;
     public MazePanel panel;

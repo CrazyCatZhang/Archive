@@ -1,0 +1,37 @@
+.showcarbtn{
+    border-radius : 5px;
+    color: #7097ff;
+    background-color: white;
+    font-size: 14px;
+    border-color: #9a64ff;
+    font-weight: 800;
+    margin-left: 269px;
+
+}
+.ensure{
+    border-radius : 5px;
+    color: #7097ff;
+    background-color: white;
+    font-size: 14px;
+    border-color: #9a64ff;
+    font-weight: 800;
+    margin-left: 800px;
+
+}
+.reset{
+    border-radius : 5px;
+    color: #7097ff;
+    background-color: white;
+    font-size: 14px;
+    border-color: #9a64ff;
+    font-weight: 800;
+}
+.backshowlist{
+    border-radius : 5px;
+    color: #7097ff;
+    background-color: white;
+    border-color: #9a64ff;
+    font-weight: 800;
+    margin-left: 600px;
+    margin-top: 10px;
+}

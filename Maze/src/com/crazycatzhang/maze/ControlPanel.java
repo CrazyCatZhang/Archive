@@ -3,6 +3,9 @@ package com.crazycatzhang.maze;
 import javax.swing.*;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * @author crazycatzhang
+ */
 public class ControlPanel extends JPanel {
     public MazePanel panel;
     public JButton restart = new JButton("Restart");
