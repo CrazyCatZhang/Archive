@@ -36,9 +36,7 @@ public class SmallSum {
         while (p2 <= r) {
             help[i++] = arr[p2++];
         }
-        for (int j = 0; j < help.length; j++) {
-            arr[l + j] = help[j];
-        }
+        System.arraycopy(help, 0, arr, l, help.length);
         return res;
     }
 }
